@@ -31,12 +31,15 @@ export interface IAuthForm {
   password: string;
 }
 
-export interface IAdminProfileData {
-  email: string;
-  login: string;
+export interface IContacts {
   phone: string;
   telegram: string;
   whatsApp: string;
   contactEmail: string;
   socialMedia: { title: string; link: string }[];
+}
+
+export interface IAdminProfileData extends IContacts {
+  email: string;
+  login: string;
 }

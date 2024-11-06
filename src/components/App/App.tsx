@@ -8,11 +8,14 @@ function App() {
         path="/"
         element={
           <>
-            <Header />
+            <Header mode={1} />
           </>
         }
       >
         <Route index element />
+        <Route path="/shop" element />
+        <Route path="/profile" element />
+        <Route path="/contacts" element />
       </Route>
     </Routes>
   );
