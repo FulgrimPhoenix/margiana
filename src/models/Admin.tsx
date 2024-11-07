@@ -1,11 +1,4 @@
-import { IAdminProfileData } from "../types";
-
-interface IAdminModel extends IAdminProfileData {
-  patchProfileData<T extends IAdminProfileData>(
-    originalValues: T,
-    newValues: Partial<T>
-  ): void;
-}
+import { IAdminModel, IAdminProfileData } from "../types";
 
 class AdminModel implements IAdminModel {
   email: string;

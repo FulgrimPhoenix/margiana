@@ -1,5 +1,3 @@
-import { constants } from "../utils/constants";
-
 export interface IProduct {
   title: string;
   price: number;
@@ -44,4 +42,11 @@ export interface IContacts {
 export interface IAdminProfileData extends IContacts {
   email: string;
   login: string;
+}
+
+export interface IAdminModel extends IAdminProfileData {
+  patchProfileData<T extends IAdminProfileData>(
+    originalValues: T,
+    newValues: Partial<T>
+  ): void;
 }
