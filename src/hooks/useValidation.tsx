@@ -1,17 +1,24 @@
 import { useState } from "react";
 
+interface IUseValidation {
+  initialValue: { isValid: boolean; errorMessage: string };
+  regax: RegExp;
+  advancedValidation: boolean;
+  password?: string;
+}
+
 export const UseValidation = ({
   initialValue,
   regax,
   advancedValidation,
   password,
-}) => {
+}: IUseValidation) => {
   const [isValid, setIsValid] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [validationResult, setValidationResult] = useState(initialValue);
-  const optionalFields = ["name", "surname", "address", "id"]
+  const optionalFields = ["name", "surname", "address", "id"];
 
-  function inputAdvancedValidation(e) {
+  function inputAdvancedValidation(e: React.ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value;
     if (e.target.name === "email") {
       return String(inputValue).match(regax) ? true : false;
@@ -24,9 +31,12 @@ export const UseValidation = ({
 
   return {
     validationResult,
-    onChangee: (e) => {
+    onChangee: (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.validity.valid) {
-        if (!optionalFields.includes(e.target.name) && (e.target.value === "" || undefined)) {
+        if (
+          !optionalFields.includes(e.target.name) &&
+          (e.target.value === "" || undefined)
+        ) {
           setIsValid(false);
           setErrorMessage("Запоните это поле");
           setValidationResult({
@@ -72,13 +82,10 @@ export const UseValidation = ({
           return;
         } else if (e.target.name === "id") {
           setIsValid(false);
-          setErrorMessage(
-            "Поле заполнено неверно. Используйте только цифры"
-          );
+          setErrorMessage("Поле заполнено неверно. Используйте только цифры");
           setValidationResult({
             isValid: false,
-            errorMessage:
-              "Поле заполнено неверно. Используйте только цифры",
+            errorMessage: "Поле заполнено неверно. Используйте только цифры",
           });
           return;
         } else {

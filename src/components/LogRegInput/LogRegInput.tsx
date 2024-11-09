@@ -11,8 +11,8 @@ interface ILogRegInput {
   value: string;
   name: string;
   placeholder: string;
-  validateForm: (name: string, value: string) => void;
-  regax: string;
+  validateForm: (name: string, value: boolean) => void;
+  regax: RegExp;
   advancedValidation: boolean;
   isFormActive: boolean;
 }
@@ -32,7 +32,7 @@ export function LogRegInput({
   isFormActive,
 }: ILogRegInput): React.ReactElement {
   const { validationResult, onChangee, isValid } = UseValidation({
-    initialValue: { isValid: false, error: "" },
+    initialValue: { isValid: false, errorMessage: "" },
     regax: regax,
     advancedValidation: advancedValidation,
   });
@@ -41,7 +41,7 @@ export function LogRegInput({
     validateForm(name, isValid);
   }, [isValid]);
 
-  function onInputChange(e: React.SyntheticEvent) {
+  function onInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     onChange(e);
     onChangee(e);
   }
