@@ -20,10 +20,7 @@ function App() {
       >
         <Route index element />
         <Route path="/shop" element />
-        <Route
-          path="/profile"
-          element={<AdminProfile adminData={adminData} />}
-        />
+        <Route path="/profile" element={<AdminProfile {...adminData} />} />
         <Route path="/contacts" element />
       </Route>
     </Routes>

@@ -1,5 +1,5 @@
-import React, { SyntheticEvent, useEffect } from "react";
-import "./LogRegInput.css";
+import React, { useEffect } from "react";
+import "./LogRegInput.scss";
 import { UseValidation } from "../../hooks/useValidation";
 
 interface ILogRegInput {
@@ -7,7 +7,7 @@ interface ILogRegInput {
   inputType: string;
   minLength: number;
   maxLength: number;
-  onChange: (e: React.SyntheticEvent) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   name: string;
   placeholder: string;
