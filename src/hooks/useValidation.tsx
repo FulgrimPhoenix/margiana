@@ -14,9 +14,7 @@ export const UseValidation = ({
   password,
 }: IUseValidation) => {
   const [isValid, setIsValid] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
   const [validationResult, setValidationResult] = useState(initialValue);
-  const optionalFields = ["name", "surname", "address", "id"];
 
   function inputAdvancedValidation(e: React.ChangeEvent<HTMLInputElement>) {
     const inputValue = e.target.value;
@@ -25,7 +23,14 @@ export const UseValidation = ({
     } else if (e.target.name === "passwordRepeat") {
       return inputValue === password;
     } else {
-      return !regax.test(String(inputValue));
+      console.log(
+        1,
+        regax.test(inputValue),
+        !regax.test(inputValue),
+        inputValue
+      );
+
+      return !regax.test(inputValue);
     }
   }
 
@@ -33,26 +38,12 @@ export const UseValidation = ({
     validationResult,
     onChangee: (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.validity.valid) {
-        if (
-          !optionalFields.includes(e.target.name) &&
-          (e.target.value === "" || undefined)
-        ) {
-          setIsValid(false);
-          setErrorMessage("Запоните это поле");
-          setValidationResult({
-            isValid: false,
-            errorMessage: "Запоните это поле",
-          });
-          return;
-        }
-        if (!advancedValidation || inputAdvancedValidation(e)) {
+        if (!advancedValidation && inputAdvancedValidation(e)) {
           setIsValid(true);
-          setErrorMessage("");
           setValidationResult({ isValid: true, errorMessage: "" });
           return;
         } else if (e.target.name === "passwordRepeat") {
           setIsValid(false);
-          setErrorMessage("Пароли не совпадают");
           setValidationResult({
             isValid: false,
             errorMessage: "Пароли не совпадают",
@@ -60,9 +51,6 @@ export const UseValidation = ({
           return;
         } else if (e.target.name === "login") {
           setIsValid(false);
-          setErrorMessage(
-            "Поле заполнено неверно. Используйте только латинские буквы и цифры"
-          );
           setValidationResult({
             isValid: false,
             errorMessage:
@@ -71,9 +59,6 @@ export const UseValidation = ({
           return;
         } else if (e.target.name === "name" || e.target.name === "surname") {
           setIsValid(false);
-          setErrorMessage(
-            "Поле заполнено неверно. Используйте только кириллицу"
-          );
           setValidationResult({
             isValid: false,
             errorMessage:
@@ -82,7 +67,6 @@ export const UseValidation = ({
           return;
         } else if (e.target.name === "id") {
           setIsValid(false);
-          setErrorMessage("Поле заполнено неверно. Используйте только цифры");
           setValidationResult({
             isValid: false,
             errorMessage: "Поле заполнено неверно. Используйте только цифры",
@@ -90,7 +74,6 @@ export const UseValidation = ({
           return;
         } else {
           setIsValid(false);
-          setErrorMessage("Поле заполнено неверно");
           setValidationResult({
             isValid: false,
             errorMessage: "Поле заполнено неверно",
@@ -99,7 +82,6 @@ export const UseValidation = ({
         }
       } else {
         setIsValid(e.target.validity.valid);
-        setErrorMessage(e.target.validationMessage);
         setValidationResult({
           isValid: e.target.validity.valid,
           errorMessage: e.target.validationMessage,
