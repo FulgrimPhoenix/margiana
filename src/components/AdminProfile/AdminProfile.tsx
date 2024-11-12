@@ -5,15 +5,22 @@ import { useForm } from "../../hooks/useForm";
 import { z } from "zod";
 
 export const AdminProfile = (adminData: IAdminProfileData) => {
-  const [isValid, setIsValid] = useState({
-    login: false,
-    email: false,
-    password: false,
-    passwordRepeat: false,
-  });
-  function validateForm(name: string, value: boolean) {
-    setIsValid({ ...isValid, [name]: value });
-  }
+  const initialProfileData: Record<
+    string,
+    { value: boolean; message: string }
+  > = {
+    login: { value: true, message: "" },
+    email: { value: true, message: "" },
+    contactEmail: { value: true, message: "" },
+    contactPhone: { value: true, message: "" },
+    telegram: { value: true, message: "" },
+    whatsApp: { value: true, message: "" },
+  };
+  const [isValid, setIsValid] =
+    useState<Record<string, { value: boolean; message: string }>>(
+      initialProfileData
+    );
+
   const { values, onChange, setValues } = useForm({});
 
   const AdminSchema = z.object({
@@ -23,26 +30,49 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
       .max(12)
       .regex(/[a-z0-9\sё-]/gi)
       .optional(),
-    email: z.string().min(8).max(20).email().optional(),
-    contactEmail: z.string().min(8).max(20).email().optional(),
+    email: z
+      .string()
+      .min(8)
+      .max(20)
+      .email()
+      .regex(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
+      )
+      .optional(),
+    contactEmail: z
+      .string()
+      .min(8)
+      .max(20)
+      .email()
+      .regex(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
+      )
+      .optional(),
     tel: z.string().min(12).max(12).optional(),
     telegram: z
       .string()
       .regex(/https?:\/\/t.me\//)
-      .min(13)
+      .min(12)
       .optional(),
     whatsApp: z
       .string()
       .regex(/https?:\/\/wa.me\//)
-      .min(14)
+      .min(12)
       .optional(),
     vk: z.string().min(2).max(12).optional(),
   });
 
   useEffect(() => {
-    try {
-      AdminSchema.parse(values);
-    } catch (error) {}
+    setIsValid(initialProfileData);
+
+    if (AdminSchema.safeParse(values).error) {
+      AdminSchema.safeParse(values).error?.errors.forEach((element, i) => {
+        setIsValid({
+          ...isValid,
+          [element.path[0]]: { value: false, message: element.message },
+        });
+      });
+    }
   }, [values]);
 
   return (
@@ -52,78 +82,64 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
         <LogRegInput
           title={"Логин"}
           inputType={`text`}
-          minLength={2}
-          maxLength={12}
           onChange={onChange}
           value={values["login"]}
           name={"login"}
           placeholder={"Логин"}
-          validateForm={validateForm}
-          regax={/[^a-z0-9\sё-]/gi}
-          advancedValidation={false}
-          isFormActive={false}
+          isInputActive={true}
+          isInputValid={isValid.login}
+        />
+        <LogRegInput
+          title={"Email"}
+          inputType={`email`}
+          onChange={onChange}
+          value={values["email"]}
+          name={"email"}
+          placeholder={"example@mail.ru"}
+          isInputActive={true}
+          isInputValid={isValid.email}
+        />
+        <LogRegInput
+          title={"Контактный email"}
+          inputType={`email`}
+          onChange={onChange}
+          value={values["contactEmail"]}
+          name={"contactEmail"}
+          placeholder={"example@mail.ru"}
+          isInputActive={true}
+          isInputValid={isValid.contactEmail}
+        />
+        <LogRegInput
+          title={"Контактный телефон"}
+          inputType={`tel`}
+          onChange={onChange}
+          value={values["contactPhone"]}
+          name={"contactPhone"}
+          placeholder={"+79998887766"}
+          isInputActive={true}
+          isInputValid={isValid.contactPhone}
+        />
+        <LogRegInput
+          title={"Telegram"}
+          inputType={`phone`}
+          onChange={onChange}
+          value={values["telegram"]}
+          name={"telegram"}
+          placeholder={"https://t.me/tester"}
+          isInputActive={true}
+          isInputValid={isValid.telegram}
+        />
+        <LogRegInput
+          title={"WhatsApp"}
+          inputType={`phone`}
+          onChange={onChange}
+          value={values["whatsApp"]}
+          name={"whatsApp"}
+          placeholder={"https://wa.me/tester"}
+          isInputActive={true}
+          isInputValid={isValid.whatsApp}
         />
       </form>
     </section>
   );
 };
-// <LogRegInput
-//   name="email"
-//   value={values["email"]}
-//   onChange={onChange}
-//   title="email"
-//   inputType="email"
-//   minLength={8}
-//   maxLength={30}
-//   validateForm={validateForm}
-//   placeholder={"test@mail.ru"}
-//   regax={
-//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
-//   }
-//   advancedValidation={true}
-//   isFormActive={false}
-// />
-// <LogRegInput
-//   title={"Контактный телефон"}
-//   inputType={`tel`}
-//   minLength={12}
-//   maxLength={12}
-//   onChange={onChange}
-//   value={values["tel"]}
-//   name={"tel"}
-//   placeholder={"+79998887766"}
-//   validateForm={validateForm}
-//   regax={/[^0-9\s+]/gi}
-//   advancedValidation={true}
-//   isFormActive={false}
-// />
-// <LogRegInput
-//   name="contactEmail"
-//   value={values["contactEmail"]}
-//   onChange={onChange}
-//   title="Email для контакта с покупателями"
-//   inputType="email"
-//   minLength={8}
-//   maxLength={30}
-//   validateForm={validateForm}
-//   placeholder={"test@mail.ru"}
-//   regax={
-//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
-//   }
-//   advancedValidation={true}
-//   isFormActive={false}
-// />
-// <LogRegInput
-//   title={"Telegram"}
-//   inputType={`text`}
-//   minLength={2}
-//   maxLength={12}
-//   onChange={onChange}
-//   value={values["telegram"]}
-//   name={"telegram"}
-//   placeholder={"https://t.me/tester"}
-//   validateForm={validateForm}
-//   regax={/^http/}
-//   advancedValidation={true}
-//   isFormActive={false}
-// />

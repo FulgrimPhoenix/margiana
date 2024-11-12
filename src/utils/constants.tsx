@@ -22,7 +22,7 @@ export const constants: IConstants = {
     profileLink: { title: "Профиль", link: "/profile", icon: profileIcon },
   },
   contacts: {
-    phone: "+79998887766",
+    contactPhone: "+79998887766",
     telegram: "https://t.me/Fulgrim30k",
     whatsApp: "https://wa.me/qr/DFHYVDLVFO4NB1",
     contactEmail: "ivanyuschin.ilia2010@yandex.ru",

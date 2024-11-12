@@ -32,7 +32,7 @@ export interface IAuthForm {
 }
 
 export interface IContacts {
-  phone: string;
+  contactPhone: string;
   telegram: string;
   whatsApp: string;
   contactEmail: string;
