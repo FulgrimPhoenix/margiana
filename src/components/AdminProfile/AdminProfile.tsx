@@ -49,7 +49,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
       )
       .optional(),
-    tel: z.string().min(12).max(12).optional(),
+    contactPhone: z.string().min(12).max(12).regex(/[0-9]/gi).optional(),
     telegram: z
       .string()
       .regex(/https?:\/\/t.me\//)
@@ -74,12 +74,13 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
         });
       });
     }
+    console.log(Object.values(isValid).every(el => el.value === true));
   }, [values]);
 
   return (
     <section className="profile">
       <h1 className="profile__title">Добрый день, Босс!</h1>
-      <LogRegForm isFormActive={true}>
+      <LogRegForm isFormActive={true} isValid={isValid}>
         <LogRegInput
           title={"Логин"}
           inputType={`text`}
