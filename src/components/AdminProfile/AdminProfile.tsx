@@ -3,6 +3,7 @@ import { IAdminProfileData } from "../../types";
 import { LogRegInput } from "../LogRegInput/LogRegInput";
 import { useForm } from "../../hooks/useForm";
 import { z } from "zod";
+import { LogRegForm } from "../LogRegForm/LogRegForm";
 
 export const AdminProfile = (adminData: IAdminProfileData) => {
   const initialProfileData: Record<
@@ -78,7 +79,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
   return (
     <section className="profile">
       <h1 className="profile__title">Добрый день, Босс!</h1>
-      <form>
+      <LogRegForm isFormActive={true}>
         <LogRegInput
           title={"Логин"}
           inputType={`text`}
@@ -86,7 +87,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
           value={values["login"]}
           name={"login"}
           placeholder={"Логин"}
-          isInputActive={true}
+          isFormActive={true}
           isInputValid={isValid.login}
         />
         <LogRegInput
@@ -96,7 +97,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
           value={values["email"]}
           name={"email"}
           placeholder={"example@mail.ru"}
-          isInputActive={true}
+          isFormActive={true}
           isInputValid={isValid.email}
         />
         <LogRegInput
@@ -106,7 +107,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
           value={values["contactEmail"]}
           name={"contactEmail"}
           placeholder={"example@mail.ru"}
-          isInputActive={true}
+          isFormActive={true}
           isInputValid={isValid.contactEmail}
         />
         <LogRegInput
@@ -116,7 +117,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
           value={values["contactPhone"]}
           name={"contactPhone"}
           placeholder={"+79998887766"}
-          isInputActive={true}
+          isFormActive={true}
           isInputValid={isValid.contactPhone}
         />
         <LogRegInput
@@ -126,7 +127,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
           value={values["telegram"]}
           name={"telegram"}
           placeholder={"https://t.me/tester"}
-          isInputActive={true}
+          isFormActive={true}
           isInputValid={isValid.telegram}
         />
         <LogRegInput
@@ -136,10 +137,10 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
           value={values["whatsApp"]}
           name={"whatsApp"}
           placeholder={"https://wa.me/tester"}
-          isInputActive={true}
+          isFormActive={true}
           isInputValid={isValid.whatsApp}
         />
-      </form>
+      </LogRegForm>
     </section>
   );
 };

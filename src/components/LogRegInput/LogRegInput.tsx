@@ -9,7 +9,7 @@ interface ILogRegInput {
   value: string;
   name: string;
   placeholder: string;
-  isInputActive: boolean;
+  isFormActive: boolean;
   isInputValid: { value: boolean; message: string };
 }
 
@@ -20,25 +20,25 @@ export function LogRegInput({
   value,
   name,
   placeholder,
-  isInputActive,
+  isFormActive,
   isInputValid,
 }: ILogRegInput): React.ReactElement {
   return (
-    <div className="log-reg-input">
-      <h2 className="log-reg-input__title">{title}</h2>
+    <div className="log-reg-form">
+      <h2 className="log-reg-form__title">{title}</h2>
       <input
         name={name}
-        className="log-reg-input__input"
+        className="log-reg-form__input"
         onChange={onChange}
         value={value || ""}
         type={inputType}
         placeholder={placeholder}
         autoComplete="new-password"
-        disabled={!isInputActive ? true : false} // disabled={isInputActive ? "" : "disabled"}
+        disabled={!isFormActive ? true : false} // disabled={isFormActive ? "" : "disabled"}
       />
       <span
-        className={`log-reg-input__error-message ${
-          isInputValid.value ? "" : "log-reg-input__error-message-active"
+        className={`log-reg-form__error-message ${
+          isInputValid.value ? "" : "log-reg-form__error-message-active"
         }`}
       >
         {isInputValid.message}

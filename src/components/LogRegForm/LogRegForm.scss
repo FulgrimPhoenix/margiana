@@ -1,0 +1,9 @@
+.log-reg-form{
+    &__submit{
+        color: var(--accent-text-color);
+        background-color: var(--accent-black);
+        width: 90%;
+        height: 32px;
+        border-radius: 4px;
+    }
+}
