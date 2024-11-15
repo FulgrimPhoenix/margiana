@@ -32,14 +32,21 @@ export interface IAuthForm {
 }
 
 export interface IContacts {
-  phone: string;
+  contactPhone: string;
   telegram: string;
   whatsApp: string;
   contactEmail: string;
-  socialMedia: { title: string; link: string }[];
+  vk: string;
 }
 
 export interface IAdminProfileData extends IContacts {
   email: string;
   login: string;
+}
+
+export interface IAdminModel extends IAdminProfileData {
+  patchProfileData<T extends IAdminProfileData>(
+    originalValues: T,
+    newValues: Partial<T>
+  ): void;
 }

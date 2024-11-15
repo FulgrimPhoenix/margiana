@@ -1,0 +1,31 @@
+.log-reg-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 396px;
+  margin: 0;
+
+  &__submit {
+    margin: 20px auto 0;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--accent-text-color);
+    background-color: var(--black-accent);
+    width: 100%;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      opacity: 0.3;
+    }
+    &:disabled {
+      color: rgb(160, 160, 160);
+      background-color: var(--grey-accent);
+    }
+  }
+}

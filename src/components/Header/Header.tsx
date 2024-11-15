@@ -21,7 +21,11 @@ export const Header = ({ mode }: IHeader): React.ReactElement => {
         </a>
         <div className="header__nav-link-container">
           {headerConstants.links.map((item) => (
-            <NavLink className={"header__nav-link"} to={item.link}>
+            <NavLink
+              key={item.title}
+              className={"header__nav-link"}
+              to={item.link}
+            >
               {item.title}
             </NavLink>
           ))}
