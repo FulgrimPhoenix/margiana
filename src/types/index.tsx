@@ -36,7 +36,7 @@ export interface IContacts {
   telegram: string;
   whatsApp: string;
   contactEmail: string;
-  socialMedia: { title: string; link: string }[];
+  vk: string;
 }
 
 export interface IAdminProfileData extends IContacts {

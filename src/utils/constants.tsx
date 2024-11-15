@@ -1,6 +1,6 @@
 import logo from "../images/header/logo.svg";
 import profileIcon from "../images/header/profileIcon.svg";
-import { IContacts } from "../types";
+import { IAdminProfileData, IContacts } from "../types";
 
 interface IConstants {
   header: {
@@ -8,7 +8,7 @@ interface IConstants {
     links: { title: string; link: string }[];
     profileLink: { title: string; link: string; icon: string };
   };
-  contacts: IContacts;
+  defaultAdminProfileData: IAdminProfileData;
 }
 
 export const constants: IConstants = {
@@ -21,11 +21,13 @@ export const constants: IConstants = {
     ],
     profileLink: { title: "Профиль", link: "/profile", icon: profileIcon },
   },
-  contacts: {
-    contactPhone: "+79998887766",
-    telegram: "https://t.me/Fulgrim30k",
-    whatsApp: "https://wa.me/qr/DFHYVDLVFO4NB1",
-    contactEmail: "ivanyuschin.ilia2010@yandex.ru",
-    socialMedia: [{ title: "VK", link: "https://vk.com/id127044462" }],
+  defaultAdminProfileData: {
+    login: "tester2024",
+    email: "tester@mail.ru",
+    contactEmail: "tester@mail.ru",
+    contactPhone: "+75556662211",
+    telegram: "https://t.me/tester2024",
+    whatsApp: "https://wa.me/tester2024",
+    vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
   },
 };

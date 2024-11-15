@@ -24,7 +24,7 @@ export function LogRegInput({
   isInputValid,
 }: ILogRegInput): React.ReactElement {
   return (
-    <div className="log-reg-form">
+    <>
       <h2 className="log-reg-form__title">{title}</h2>
       <input
         name={name}
@@ -43,6 +43,6 @@ export function LogRegInput({
       >
         {isInputValid.message}
       </span>
-    </div>
+    </>
   );
 }

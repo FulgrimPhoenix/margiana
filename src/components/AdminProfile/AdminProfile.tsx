@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IAdminProfileData } from "../../types";
 import { LogRegInput } from "../LogRegInput/LogRegInput";
 import { useForm } from "../../hooks/useForm";
 import { z } from "zod";
 import { LogRegForm } from "../LogRegForm/LogRegForm";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
+import { constants } from "../../utils/constants";
+import "./AdminProfile.scss";
 
-export const AdminProfile = (adminData: IAdminProfileData) => {
-  const initialProfileData: Record<
+export const AdminProfile = () => {
+  const adminProfileData = useContext(CurrentUserContext);
+  const initialProfileValidation: Record<
     string,
     { value: boolean; message: string }
   > = {
@@ -16,13 +20,15 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
     contactPhone: { value: true, message: "" },
     telegram: { value: true, message: "" },
     whatsApp: { value: true, message: "" },
+    vk: { value: true, message: "" },
   };
-  const [isValid, setIsValid] =
-    useState<Record<string, { value: boolean; message: string }>>(
-      initialProfileData
-    );
+  const [isValid, setIsValid] = useState<
+    Record<string, { value: boolean; message: string }>
+  >(initialProfileValidation);
 
-  const { values, onChange, setValues } = useForm({});
+  const { values, onChange, setValues } = useForm<IAdminProfileData>(
+    adminProfileData || constants.defaultAdminProfileData
+  );
 
   const AdminSchema = z.object({
     login: z
@@ -60,11 +66,11 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
       .regex(/https?:\/\/wa.me\//)
       .min(12)
       .optional(),
-    vk: z.string().min(2).max(12).optional(),
+    vk: z.string(),
   });
 
   useEffect(() => {
-    setIsValid(initialProfileData);
+    setIsValid(initialProfileValidation);
 
     if (AdminSchema.safeParse(values).error) {
       AdminSchema.safeParse(values).error?.errors.forEach((element, i) => {
@@ -74,7 +80,8 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
         });
       });
     }
-    console.log(Object.values(isValid).every(el => el.value === true));
+    console.log(Object.values(isValid).every((el) => el.value === true));
+    console.log(AdminSchema.safeParse(values));
   }, [values]);
 
   return (
@@ -123,7 +130,7 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
         />
         <LogRegInput
           title={"Telegram"}
-          inputType={`phone`}
+          inputType={`text`}
           onChange={onChange}
           value={values["telegram"]}
           name={"telegram"}
@@ -133,13 +140,23 @@ export const AdminProfile = (adminData: IAdminProfileData) => {
         />
         <LogRegInput
           title={"WhatsApp"}
-          inputType={`phone`}
+          inputType={`text`}
           onChange={onChange}
           value={values["whatsApp"]}
           name={"whatsApp"}
           placeholder={"https://wa.me/tester"}
           isFormActive={true}
           isInputValid={isValid.whatsApp}
+        />
+        <LogRegInput
+          title={"VK"}
+          inputType={`text`}
+          onChange={onChange}
+          value={values["vk"]}
+          name={"vk"}
+          placeholder={"https://vk.com/tester"}
+          isFormActive={true}
+          isInputValid={isValid.vk}
         />
       </LogRegForm>
     </section>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useForm = (initialValue: Record<string, string>) => {
+export const useForm = <T,>(initialValue: T) => {
   const [values, setValues] = useState(initialValue);
 
   return {

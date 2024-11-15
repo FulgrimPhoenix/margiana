@@ -1,63 +1,57 @@
 .log-reg-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 396px;
-  margin: 0;
-}
+  &__title {
+    margin: 20px 0 0;
+    color: #a0a0a0;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &:first-child {
+      margin: 20px 0 0;
+    }
+  }
+  &__error-message {
+    margin: 10px 0 0;
+    color: #ff4062;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    min-height: 14px;
+  }
 
-.log-reg-form__title {
-  margin: 0;
-  color: #a0a0a0;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  &__error-message-active {
+    opacity: 1;
+  }
 }
 
 .log-reg-form__input {
   border: none;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  height: 46px;
-  margin: 10px 0 0;
+  border-bottom: solid 1px var(--grey-accent);
+  background-color: #fff;
+  height: 25px;
+
   box-sizing: border-box;
-  padding: 15px;
   color: #000;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
 
-.log-reg-form__input:focus {
-  border: none;
-  outline: none;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 1);
-}
+  &:focus {
+    border-bottom: solid 1px var(--black-accent);
+    outline: none;
+  }
 
-.log-reg-form__input::placeholder {
-  color: rgb(160, 160, 160);
-  font-family: 'Inter', Arial, sans-serif;
-}
-
-.log-reg-form__error-message {
-  margin: 10px 0 0;
-  color: #ff4062;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  opacity: 0;
-  transition: opacity 0.3s linear;
-  min-height: 14px;
-}
-
-.log-reg-form__error-message-active {
-  opacity: 1;
+  &::placeholder {
+    color: rgb(160, 160, 160);
+    font-family: "Inter", Arial, sans-serif;
+  }
 }
 
 @media screen and (max-width: 800px) {

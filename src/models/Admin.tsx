@@ -1,4 +1,5 @@
 import { IAdminModel, IAdminProfileData } from "../types";
+import { constants } from "../utils/constants";
 
 class AdminModel implements IAdminModel {
   email: string;
@@ -7,7 +8,7 @@ class AdminModel implements IAdminModel {
   telegram: string;
   whatsApp: string;
   contactEmail: string;
-  socialMedia: { title: string; link: string }[];
+  vk: string;
 
   constructor(params: IAdminProfileData) {
     this.email = params.email;
@@ -16,7 +17,7 @@ class AdminModel implements IAdminModel {
     this.telegram = params.telegram;
     this.whatsApp = params.whatsApp;
     this.contactEmail = params.contactEmail;
-    this.socialMedia = params.socialMedia;
+    this.vk = params.vk;
   }
 
   patchProfileData<T extends IAdminProfileData>(
@@ -31,12 +32,4 @@ class AdminModel implements IAdminModel {
   }
 }
 
-export const adminData = new AdminModel({
-  email: "ivanyuschin.work@yandex.ru",
-  login: "tester",
-  contactPhone: "+79998887766",
-  telegram: "https://t.me/Fulgrim30k",
-  whatsApp: "https://wa.me/qr/DFHYVDLVFO4NB1",
-  contactEmail: "ivanyuschin.ilia2010@yandex.ru",
-  socialMedia: [{ title: "VK", link: "https://vk.com/id127044462" }],
-});
+export const adminData = new AdminModel(constants.defaultAdminProfileData);
