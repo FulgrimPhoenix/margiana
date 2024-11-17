@@ -1,5 +1,6 @@
 import logo from "../images/header/logo.svg";
 import profileIcon from "../images/header/profileIcon.svg";
+import productEx from "../images/product/productEx.jpg";
 import { IAdminProfileData, IContacts } from "../types";
 
 interface IConstants {
@@ -9,6 +10,9 @@ interface IConstants {
     profileLink: { title: string; link: string; icon: string };
   };
   defaultAdminProfileData: IAdminProfileData;
+  productEx: {
+    img: string;
+  };
 }
 
 export const constants: IConstants = {
@@ -29,5 +33,8 @@ export const constants: IConstants = {
     telegram: "https://t.me/tester2024",
     whatsApp: "https://wa.me/tester2024",
     vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
+  },
+  productEx: {
+    img: productEx,
   },
 };
