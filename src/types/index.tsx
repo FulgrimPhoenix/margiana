@@ -5,7 +5,7 @@ export interface IProduct {
   id?: string;
   tags: string[];
   photos: string[];
-  additionalInfo: Record<string, string>[];
+  additionalInfo: [string, string][];
   isDiscount: boolean;
   discountValue?: number;
 }
