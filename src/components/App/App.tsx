@@ -28,7 +28,7 @@ function App() {
           <Route path="/shop" element />
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/contacts" element />
-          <Route path="/product" element={<ProductPage productData={constants.productListEx[0]} />} />
+          <Route path="/product" element={<ProductPage productData={constants.productListEx[0]} contactsData={constants.defaultAdminProfileData}/>} />
         </Route>
       </Routes>
     </CurrentUserContext.Provider>

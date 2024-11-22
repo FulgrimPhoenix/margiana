@@ -189,4 +189,7 @@ export const constants: IConstants = {
       isDiscount: false,
     },
   ],
+  contacts: {
+
+  }
 };

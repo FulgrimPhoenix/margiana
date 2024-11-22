@@ -3,16 +3,18 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/modules";
 import "./ProductPage.scss";
-import { IProduct } from "../../types";
+import { IContacts, IProduct } from "../../types";
 import React, { useEffect, useRef, useState } from "react";
 import { constants } from "../../utils/constants";
 
 interface IProductPage {
   productData: IProduct;
+  contactsData: IContacts;
 }
 
 export const ProductPage = ({
   productData,
+  contactsData
 }: IProductPage): React.ReactElement => {
   const [isBlockOpen, setIsBlockOpen] = useState<Record<string, boolean>>({
     description: false,
@@ -150,8 +152,8 @@ export const ProductPage = ({
         </h2>
         <ul className="product-page__similar-items-cards-container">
           <Swiper
-            spaceBetween={50}
-            slidesPerView={2}
+            spaceBetween={120}
+            slidesPerView={3}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper: any) => console.log(swiper)}
           >
@@ -175,6 +177,11 @@ export const ProductPage = ({
               );
             })}
           </Swiper>
+        </ul>
+      </div>
+      <div className="product-page__contact-us">
+        <ul className="product-page__contact-us-social-media-list">
+
         </ul>
       </div>
     </section>
