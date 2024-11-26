@@ -3,6 +3,7 @@ import profileIcon from "../images/header/profileIcon.svg";
 import producPhototEx from "../images/product/productEx.jpg";
 import statusProductButtonImg from "../images/product/statusImg.svg";
 import { IAdminProfileData, IContacts, IProduct } from "../types";
+import pathGuideTest from "../images/contacts/pathGuideTest.jpg";
 
 interface IConstants {
   header: {
@@ -24,11 +25,24 @@ interface IConstants {
       title: string;
     };
     contacts: {
-      title: string,
-    }
+      title: string;
+    };
   };
   productListEx: IProduct[];
   similarProductListEx: IProduct[];
+  constactsPage: {
+    geolocation: {
+      title: string;
+      address: string;
+    };
+    pathGuide: {
+      title: string;
+      guide: { photo: string; description: string }[];
+    };
+    socialMedia: {
+      title: string
+    }
+  };
 }
 
 export const constants: IConstants = {
@@ -51,7 +65,7 @@ export const constants: IConstants = {
       telegram: "https://t.me/tester2024",
       whatsApp: "https://wa.me/tester2024",
       vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
-    } 
+    },
   },
   productPage: {
     descriptionButton: {
@@ -67,7 +81,7 @@ export const constants: IConstants = {
     },
     contacts: {
       title: "Подписывайся на нас",
-    }
+    },
   },
   productListEx: [
     {
@@ -198,4 +212,22 @@ export const constants: IConstants = {
       isDiscount: false,
     },
   ],
+  constactsPage: {
+    geolocation: {
+      title: "Мы находимся по адресу:",
+      address: "мой адрес не дом и не улица",
+    },
+    pathGuide: {
+      title: "Как к нам пройти:",
+      guide: [
+        { photo: pathGuideTest, description: "Идите налево" },
+        { photo: pathGuideTest, description: "Идите налево" },
+        { photo: pathGuideTest, description: "Идите налево" },
+        { photo: pathGuideTest, description: "Идите налево" },
+      ],
+    },
+    socialMedia: {
+      title: "С нами можно связаться по:"
+    }
+  },
 };
