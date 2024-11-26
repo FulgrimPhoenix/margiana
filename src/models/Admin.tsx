@@ -1,23 +1,15 @@
-import { IAdminModel, IAdminProfileData } from "../types";
+import { IAdminModel, IAdminProfileData, IContacts } from "../types";
 import { constants } from "../utils/constants";
 
 class AdminModel implements IAdminModel {
   email: string;
   login: string;
-  contactPhone: string;
-  telegram: string;
-  whatsApp: string;
-  contactEmail: string;
-  vk: string;
+  contacts: IContacts;
 
   constructor(params: IAdminProfileData) {
     this.email = params.email;
     this.login = params.login;
-    this.contactPhone = params.contactPhone;
-    this.telegram = params.telegram;
-    this.whatsApp = params.whatsApp;
-    this.contactEmail = params.contactEmail;
-    this.vk = params.vk;
+    this.contacts = params.contacts;
   }
 
   patchProfileData<T extends IAdminProfileData>(

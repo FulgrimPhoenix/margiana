@@ -23,6 +23,9 @@ interface IConstants {
     similarItemsBlock: {
       title: string;
     };
+    contacts: {
+      title: string,
+    }
   };
   productListEx: IProduct[];
   similarProductListEx: IProduct[];
@@ -35,17 +38,20 @@ export const constants: IConstants = {
       { title: "Главная", link: "/" },
       { title: "Каталог", link: "/shop" },
       { title: "Контакты", link: "/contacts" },
+      { title: "П", link: "/product" },
     ],
     profileLink: { title: "Профиль", link: "/profile", icon: profileIcon },
   },
   defaultAdminProfileData: {
     login: "tester2024",
     email: "tester@mail.ru",
-    contactEmail: "tester@mail.ru",
-    contactPhone: "+75556662211",
-    telegram: "https://t.me/tester2024",
-    whatsApp: "https://wa.me/tester2024",
-    vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
+    contacts: {
+      contactEmail: "tester@mail.ru",
+      contactPhone: "+75556662211",
+      telegram: "https://t.me/tester2024",
+      whatsApp: "https://wa.me/tester2024",
+      vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
+    } 
   },
   productPage: {
     descriptionButton: {
@@ -59,6 +65,9 @@ export const constants: IConstants = {
     similarItemsBlock: {
       title: "Похожие товары",
     },
+    contacts: {
+      title: "Подписывайся на нас",
+    }
   },
   productListEx: [
     {
@@ -77,7 +86,7 @@ export const constants: IConstants = {
     «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
     и безупречного вкуса.`,
       id: "111111",
-      tags: ["серьги"],
+      categories: ["серьги"],
       photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
       additionalInfo: [
         ["Вес", "100гр"],
@@ -104,7 +113,7 @@ export const constants: IConstants = {
     «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
     и безупречного вкуса.`,
       id: "111111",
-      tags: ["серьги"],
+      categories: ["серьги"],
       photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
       additionalInfo: [
         ["Вес", "100гр"],
@@ -129,7 +138,7 @@ export const constants: IConstants = {
     «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
     и безупречного вкуса.`,
       id: "111111",
-      tags: ["серьги"],
+      categories: ["серьги"],
       photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
       additionalInfo: [
         ["Вес", "100гр"],
@@ -154,7 +163,7 @@ export const constants: IConstants = {
     «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
     и безупречного вкуса.`,
       id: "111111",
-      tags: ["серьги"],
+      categories: ["серьги"],
       photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
       additionalInfo: [
         ["Вес", "100гр"],
@@ -179,7 +188,7 @@ export const constants: IConstants = {
     «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
     и безупречного вкуса.`,
       id: "111111",
-      tags: ["серьги"],
+      categories: ["серьги"],
       photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
       additionalInfo: [
         ["Вес", "100гр"],
@@ -189,7 +198,4 @@ export const constants: IConstants = {
       isDiscount: false,
     },
   ],
-  contacts: {
-
-  }
 };

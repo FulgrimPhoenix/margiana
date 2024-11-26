@@ -62,6 +62,14 @@
     border-bottom: 1px solid var(--accent-main);
   }
 
+  &__section-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    margin: 0;
+  }
+
   &__additional-info {
     margin: 12px auto;
     font-size: 12px;
@@ -128,14 +136,6 @@
     margin: 21px auto;
     position: relative;
     width: 100%;
-
-    &-title {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 27px;
-      text-align: left;
-      margin: 0;
-    }
 
     &-cards-container {
       margin: 13px auto 50px;

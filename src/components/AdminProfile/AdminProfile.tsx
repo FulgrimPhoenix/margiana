@@ -26,9 +26,15 @@ export const AdminProfile = () => {
     Record<string, { value: boolean; message: string }>
   >(initialProfileValidation);
 
-  const { values, onChange, setValues } = useForm<IAdminProfileData>(
-    adminProfileData || constants.defaultAdminProfileData
-  );
+  const { values, onChange, setValues } = useForm<Record<string, string>>({
+    login: adminProfileData.login,
+    email: adminProfileData.email,
+    contactEmail: adminProfileData.contacts.contactEmail,
+    contactPhone: adminProfileData.contacts.contactPhone,
+    telegram: adminProfileData.contacts.telegram,
+    whatsApp: adminProfileData.contacts.whatsApp,
+    vk: adminProfileData.contacts.vk,
+  });
 
   const AdminSchema = z.object({
     login: z
@@ -80,7 +86,6 @@ export const AdminProfile = () => {
         });
       });
     }
-    console.log(Object.values(isValid).every((el) => el.value === true));
     console.log(AdminSchema.safeParse(values));
   }, [values]);
 
@@ -112,7 +117,7 @@ export const AdminProfile = () => {
           title={"Контактный email"}
           inputType={`email`}
           onChange={onChange}
-          value={values["contactEmail"]}
+          value={values["contacts"]}
           name={"contactEmail"}
           placeholder={"example@mail.ru"}
           isFormActive={true}

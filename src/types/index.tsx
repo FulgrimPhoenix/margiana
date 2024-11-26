@@ -3,7 +3,7 @@ export interface IProduct {
   price: number;
   description: string;
   id?: string;
-  tags: string[];
+  categories: string[];
   photos: string[];
   additionalInfo: [string, string][];
   isDiscount: boolean;
@@ -39,9 +39,10 @@ export interface IContacts {
   vk: string;
 }
 
-export interface IAdminProfileData extends IContacts {
+export interface IAdminProfileData {
   email: string;
   login: string;
+  contacts: IContacts;
 }
 
 export interface IAdminModel extends IAdminProfileData {

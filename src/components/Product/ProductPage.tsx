@@ -4,23 +4,26 @@ import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/modules";
 import "./ProductPage.scss";
 import { IContacts, IProduct } from "../../types";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { constants } from "../../utils/constants";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 interface IProductPage {
   productData: IProduct;
-  contactsData: IContacts;
 }
 
 export const ProductPage = ({
   productData,
-  contactsData
 }: IProductPage): React.ReactElement => {
   const [isBlockOpen, setIsBlockOpen] = useState<Record<string, boolean>>({
     description: false,
     additionalInfo: false,
   });
 
+  const adminData = useContext(CurrentUserContext);
+
+  console.log(adminData);
+  
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const additionalInfoRef = useRef<HTMLParagraphElement>(null);
 
@@ -147,7 +150,7 @@ export const ProductPage = ({
         </div>
       </div>
       <div className="product-page__similar-items">
-        <h2 className="product-page__similar-items-title">
+        <h2 className="product-page__section-title">
           {constants.productPage.similarItemsBlock.title}
         </h2>
         <ul className="product-page__similar-items-cards-container">
@@ -177,11 +180,6 @@ export const ProductPage = ({
               );
             })}
           </Swiper>
-        </ul>
-      </div>
-      <div className="product-page__contact-us">
-        <ul className="product-page__contact-us-social-media-list">
-
         </ul>
       </div>
     </section>
