@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/margiana/static/css/main.98c03a72.css",
+    "main.js": "/margiana/static/js/main.3ff418d2.js",
+    "static/js/453.38a29ae8.chunk.js": "/margiana/static/js/453.38a29ae8.chunk.js",
+    "static/media/logo.svg": "/margiana/static/media/logo.706fa81ab860ba7ceb1c11f6b8a203ea.svg",
+    "static/media/productEx.jpg": "/margiana/static/media/productEx.8a07a4e064d8d2e49107.jpg",
+    "static/media/profileIcon.svg": "/margiana/static/media/profileIcon.7c5ec70baef1a9074f80ff00a97bffcd.svg",
+    "static/media/statusImg.svg": "/margiana/static/media/statusImg.8068c27879f429c7443141b5d787956e.svg",
+    "index.html": "/margiana/index.html",
+    "main.98c03a72.css.map": "/margiana/static/css/main.98c03a72.css.map",
+    "main.3ff418d2.js.map": "/margiana/static/js/main.3ff418d2.js.map",
+    "453.38a29ae8.chunk.js.map": "/margiana/static/js/453.38a29ae8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98c03a72.css",
+    "static/js/main.3ff418d2.js"
+  ]
+}
