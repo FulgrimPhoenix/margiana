@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./Contacts.scss";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
-import { Map, YMaps } from "@pbe/react-yandex-maps";
+import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -13,16 +13,43 @@ export const Contancts = (): React.ReactElement => {
   return (
     <section className="contacts">
       <div className="contacts__geolocation">
-        <h2 className="contacts__block-title">{constants.constactsPage.geolocation.title}</h2>
         <YMaps>
           <div className="contacts__geolocation-map">
-            <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />
+            <Map defaultState={{ center: [55.794684, 37.735773], zoom: 17 }}>
+              <Placemark geometry={[55.794684, 37.735773]} />
+            </Map>
           </div>
         </YMaps>
-        <p className="contacts__geolocation-description">{constants.constactsPage.geolocation.address}</p>
+        <h2 className="contacts__block-title">
+          {constants.contactsPage.geolocation.title}
+        </h2>
+        <p className="contacts__geolocation-description">
+          {constants.contactsPage.geolocation.address}
+        </p>
+        <a
+          href="tel: +79096695149"
+          target="blank"
+          className="contacts__geolocation-contact-phone"
+        >
+          {constants.contactsPage.geolocation.contactPhone}
+        </a>
+        <div className="contacts__geolocation-schedule-container">
+          <p className="contacts__geolocation-schedule-title">Время работы:</p>
+          <div>
+            <p className="contacts__geolocation-schedule">
+              пн-пт: 9.00 - 18.00
+            </p>
+            <p className="contacts__geolocation-schedule">сб-вс: выходные</p>
+          </div>
+        </div>
+        <p className="contacts__geolocation-contact-email">
+          {constants.contactsPage.geolocation.contactEmail}
+        </p>
       </div>
       <div className="contacts__path-guide">
-        <h2 className="contacts__block-title">{constants.constactsPage.pathGuide.title}</h2>
+        <h2 className="contacts__block-title">
+          {constants.contactsPage.pathGuide.title}
+        </h2>
         <ul className="contacts__path-guide-slider">
           <Swiper
             scrollbar={{
@@ -32,7 +59,7 @@ export const Contancts = (): React.ReactElement => {
             spaceBetween={50}
             slidesPerView={1}
           >
-            {constants.constactsPage.pathGuide.guide.map(
+            {constants.contactsPage.pathGuide.guide.map(
               (guideSlide: { photo: string; description: string }) => (
                 <SwiperSlide>
                   <li className="contacts__path-guide-slide">

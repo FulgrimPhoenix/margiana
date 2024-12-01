@@ -30,20 +30,30 @@ interface IConstants {
   };
   productListEx: IProduct[];
   similarProductListEx: IProduct[];
-  constactsPage: {
+  contactsPage: {
     geolocation: {
       title: string;
       address: string;
+      contactPhone: string;
+      contactEmail: string;
     };
     pathGuide: {
       title: string;
       guide: { photo: string; description: string }[];
     };
     socialMedia: {
-      title: string
-    }
+      title: string;
+    };
   };
 }
+
+const contactsDefault = {
+  contactEmail: "tester@mail.ru",
+  contactPhone: "+75556662211",
+  telegram: "https://t.me/tester2024",
+  whatsApp: "https://wa.me/tester2024",
+  vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
+};
 
 export const constants: IConstants = {
   header: {
@@ -59,13 +69,7 @@ export const constants: IConstants = {
   defaultAdminProfileData: {
     login: "tester2024",
     email: "tester@mail.ru",
-    contacts: {
-      contactEmail: "tester@mail.ru",
-      contactPhone: "+75556662211",
-      telegram: "https://t.me/tester2024",
-      whatsApp: "https://wa.me/tester2024",
-      vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
-    },
+    contacts: contactsDefault,
   },
   productPage: {
     descriptionButton: {
@@ -212,10 +216,12 @@ export const constants: IConstants = {
       isDiscount: false,
     },
   ],
-  constactsPage: {
+  contactsPage: {
     geolocation: {
       title: "Мы находимся по адресу:",
-      address: "мой адрес не дом и не улица",
+      address: "Большая Черкизовская улица, 24Ас6, Москва, 107553",
+      contactPhone: contactsDefault.contactPhone,
+      contactEmail: contactsDefault.contactEmail,
     },
     pathGuide: {
       title: "Как к нам пройти:",
@@ -227,7 +233,7 @@ export const constants: IConstants = {
       ],
     },
     socialMedia: {
-      title: "С нами можно связаться по:"
-    }
+      title: "С нами можно связаться по:",
+    },
   },
 };
