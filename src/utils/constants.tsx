@@ -3,6 +3,12 @@ import profileIcon from "../images/header/profileIcon.svg";
 import producPhototEx from "../images/product/productEx.jpg";
 import statusProductButtonImg from "../images/product/statusImg.svg";
 import { IAdminProfileData, IContacts, IProduct } from "../types";
+import pathGuideTest from "../images/contacts/pathGuideTest.jpg";
+import workshopBuilding from "../images/contacts/workshopBuilding.png";
+import telegramIcon from "../images/contacts/icons/telegramIcon.svg";
+import whatsAppIcon from "../images/contacts/icons/whatsAppIcon.svg";
+import emailIcon from "../images/contacts/icons/emailIcon.svg";
+import phoneIcon from "../images/contacts/icons/phoneIcon.svg";
 
 interface IConstants {
   header: {
@@ -24,12 +30,40 @@ interface IConstants {
       title: string;
     };
     contacts: {
-      title: string,
-    }
+      title: string;
+    };
   };
   productListEx: IProduct[];
   similarProductListEx: IProduct[];
+  contactsPage: {
+    address: {
+      img: string;
+      address: string;
+    };
+    geolocation: {
+      title: string;
+
+      contactPhone: string;
+      contactEmail: string;
+    };
+    pathGuide: {
+      title: string;
+      guide: { photo: string; description: string }[];
+    };
+    contacts: {
+      title: string;
+      contactsList: { title: string; icon: string; src: string | null }[];
+    };
+  };
 }
+
+const contactsDefault = {
+  contactEmail: "tester@mail.ru",
+  contactPhone: "+75556662211",
+  telegram: "https://t.me/tester2024",
+  whatsApp: "https://wa.me/tester2024",
+  vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
+};
 
 export const constants: IConstants = {
   header: {
@@ -45,13 +79,7 @@ export const constants: IConstants = {
   defaultAdminProfileData: {
     login: "tester2024",
     email: "tester@mail.ru",
-    contacts: {
-      contactEmail: "tester@mail.ru",
-      contactPhone: "+75556662211",
-      telegram: "https://t.me/tester2024",
-      whatsApp: "https://wa.me/tester2024",
-      vk: "https://www.youtube.com/watch?v=hvL1339luv0&ab_channel=RapidLiquid",
-    } 
+    contacts: contactsDefault,
   },
   productPage: {
     descriptionButton: {
@@ -67,7 +95,7 @@ export const constants: IConstants = {
     },
     contacts: {
       title: "Подписывайся на нас",
-    }
+    },
   },
   productListEx: [
     {
@@ -198,4 +226,46 @@ export const constants: IConstants = {
       isDiscount: false,
     },
   ],
+  contactsPage: {
+    address: {
+      img: workshopBuilding,
+      address: "Большая Черкизовская улица, 24Ас6, Москва, 107553",
+    },
+    geolocation: {
+      title: "Мастерская Margiana",
+
+      contactPhone: contactsDefault.contactPhone,
+      contactEmail: contactsDefault.contactEmail,
+    },
+    pathGuide: {
+      title: "Как к нам пройти:",
+      guide: [
+        { photo: pathGuideTest, description: "Идите налево" },
+        { photo: pathGuideTest, description: "Идите налево" },
+        { photo: pathGuideTest, description: "Идите налево" },
+        { photo: pathGuideTest, description: "Идите налево" },
+      ],
+    },
+    contacts: {
+      title: "По любым вопросам обращаться:",
+      contactsList: [
+        {
+          title: contactsDefault.contactPhone,
+          icon: phoneIcon,
+          src: `tel: ${contactsDefault.contactPhone}`,
+        },
+        {
+          title: "WhatsApp",
+          icon: whatsAppIcon,
+          src: contactsDefault.whatsApp,
+        },
+        {
+          title: "Telegram",
+          icon: telegramIcon,
+          src: contactsDefault.telegram,
+        },
+        { title: contactsDefault.contactEmail, icon: emailIcon, src: null },
+      ],
+    },
+  },
 };

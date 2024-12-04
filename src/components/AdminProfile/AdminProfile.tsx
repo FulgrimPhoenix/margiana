@@ -46,7 +46,7 @@ export const AdminProfile = () => {
     email: z
       .string()
       .min(8)
-      .max(20)
+      .max(28)
       .email()
       .regex(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
@@ -55,7 +55,7 @@ export const AdminProfile = () => {
     contactEmail: z
       .string()
       .min(8)
-      .max(20)
+      .max(28)
       .email()
       .regex(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
@@ -117,7 +117,7 @@ export const AdminProfile = () => {
           title={"Контактный email"}
           inputType={`email`}
           onChange={onChange}
-          value={values["contacts"]}
+          value={values["contactEmail"]}
           name={"contactEmail"}
           placeholder={"example@mail.ru"}
           isFormActive={true}

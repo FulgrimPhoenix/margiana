@@ -8,6 +8,7 @@ import { IAdminProfileData } from "../../types";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { ProductPage } from "../Product/ProductPage";
 import { constants } from "../../utils/constants";
+import { Contancts } from "../Contacts/Contacts";
 
 function App() {
   const [currentUser, setCurrentUser] = useState<IAdminProfileData>(adminData);
@@ -27,7 +28,7 @@ function App() {
           <Route index element />
           <Route path="/shop" element />
           <Route path="/profile" element={<AdminProfile />} />
-          <Route path="/contacts" element />
+          <Route path="/contacts" element={<Contancts />} />
           <Route path="/product" element={<ProductPage productData={constants.productListEx[0]} />}/>
         </Route>
       </Routes>

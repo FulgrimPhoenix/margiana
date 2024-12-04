@@ -23,7 +23,7 @@ export const ProductPage = ({
   const adminData = useContext(CurrentUserContext);
 
   console.log(adminData);
-  
+
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const additionalInfoRef = useRef<HTMLParagraphElement>(null);
 
