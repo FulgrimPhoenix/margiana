@@ -7,8 +7,10 @@ interface IStore {
   productList: IProduct[];
 }
 
+type TProductsOnPage = 8 | 12 | 16;
+
 export const Store = (props: IStore) => {
-  const [productsOnPage, setProductsOnPage] = useState<number>(6);
+  const [productsOnPage, setProductsOnPage] = useState<TProductsOnPage>(8);
   const [currentProductList, setCurrentProductList] =
     useState<number>(productsOnPage);
   const paginationDiapozoneSize = 1;
@@ -27,6 +29,17 @@ export const Store = (props: IStore) => {
   };
 
   const pageNumbers = getPageNumbers();
+
+  function handleChangeProguctsNumberOnPage(e: any) {
+    const buttonInput: number = Number(e.target.innerText) / 1;
+    const buttonProguctsNumberOnPage: TProductsOnPage =
+      buttonInput === 8 || buttonInput === 12 || buttonInput === 16
+        ? buttonInput
+        : 8;
+
+    setProductsOnPage(buttonProguctsNumberOnPage as TProductsOnPage);
+    setCurrentProductList(buttonProguctsNumberOnPage as TProductsOnPage);
+  }
 
   function handleChangePage(e: any) {
     const buttonPageNumbers = Number(e.target.innerText) / 1;
@@ -52,6 +65,32 @@ export const Store = (props: IStore) => {
   return (
     <section className="store">
       <h1 className="section-title">{constants.store.title}</h1>
+      <div className="store__product-products-on-page-container">
+        <button
+          onClick={(e) => handleChangeProguctsNumberOnPage(e)}
+          className={`store__products-on-page-button ${
+            productsOnPage === 8 ? "store__products-on-page-button_active" : ""
+          }`}
+        >
+          8
+        </button>
+        <button
+          onClick={(e) => handleChangeProguctsNumberOnPage(e)}
+          className={`store__products-on-page-button ${
+            productsOnPage === 12 ? "store__products-on-page-button_active" : ""
+          }`}
+        >
+          12
+        </button>
+        <button
+          onClick={(e) => handleChangeProguctsNumberOnPage(e)}
+          className={`store__products-on-page-button ${
+            productsOnPage === 16 ? "store__products-on-page-button_active" : ""
+          }`}
+        >
+          16
+        </button>
+      </div>
       <div className="store__product-grid">
         {props.productList.map((item, index) => {
           if (
