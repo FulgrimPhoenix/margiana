@@ -42,7 +42,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111112",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -67,7 +67,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111113",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -92,7 +92,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111114",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -117,7 +117,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111115",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -142,7 +142,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111116",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -167,7 +167,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111117",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -192,7 +192,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111118",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -217,7 +217,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111119",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -242,7 +242,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111110",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -267,7 +267,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111121",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [
@@ -292,7 +292,7 @@ export const productEx: IProduct[] = [
   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
   и безупречного вкуса.`,
-    id: "111111",
+    id: "111131",
     categories: ["серьги"],
     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
     additionalInfo: [

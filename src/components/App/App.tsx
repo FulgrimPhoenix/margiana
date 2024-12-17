@@ -10,6 +10,7 @@ import { ProductPage } from "../Product/ProductPage";
 import { constants } from "../../utils/constants";
 import { Contancts } from "../Contacts/Contacts";
 import { Store } from "../Store/Store";
+import "./App.scss";
 
 function App() {
   const [currentUser, setCurrentUser] = useState<IAdminProfileData>(adminData);
