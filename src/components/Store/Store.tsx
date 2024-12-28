@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { ButtonHTMLAttributes, useState } from "react";
 import { IProduct } from "../../types";
 import { constants } from "../../utils/constants";
 import "./Store.scss";
+import { Selector } from "../Selector/Selector";
 
 interface IStore {
   productList: IProduct[];
 }
+
+interface ISelectorsStates {
+  productsOnPageOpen: boolean;
+  productType: boolean;
+}
+
+type TProductType = "Серьги" | "Кольца" | "Браслеты" | "Подвески";
 
 type TProductsOnPage = 8 | 12 | 16;
 
@@ -15,6 +23,11 @@ export const Store = (props: IStore) => {
     useState<number>(productsOnPage);
   const paginationDiapozoneSize = 1;
   const [currentPageNumber, setCurrentPageNumber] = useState<number>(1);
+  const [selectorsStates, setSelectorsStates] = useState<ISelectorsStates>({
+    productsOnPageOpen: false,
+    productType: false,
+  });
+  const [productType, setProductType] = useState<TProductType>("Подвески");
 
   const getPageNumbers = () => {
     let pagNums: number[] = [];
@@ -39,6 +52,10 @@ export const Store = (props: IStore) => {
 
     setProductsOnPage(buttonProguctsNumberOnPage as TProductsOnPage);
     setCurrentProductList(buttonProguctsNumberOnPage as TProductsOnPage);
+    setSelectorsStates({
+      ...selectorsStates,
+      [`productsOnPageOpen`]: false,
+    });
   }
 
   function handleChangePage(e: any) {
@@ -65,31 +82,46 @@ export const Store = (props: IStore) => {
   return (
     <section className="store">
       <h1 className="section-title">{constants.store.title}</h1>
-      <div className="store__product-products-on-page-container">
-        <button
-          onClick={(e) => handleChangeProguctsNumberOnPage(e)}
-          className={`store__products-on-page-button ${
-            productsOnPage === 8 ? "store__products-on-page-button_active" : ""
-          }`}
-        >
-          8
-        </button>
-        <button
-          onClick={(e) => handleChangeProguctsNumberOnPage(e)}
-          className={`store__products-on-page-button ${
-            productsOnPage === 12 ? "store__products-on-page-button_active" : ""
-          }`}
-        >
-          12
-        </button>
-        <button
-          onClick={(e) => handleChangeProguctsNumberOnPage(e)}
-          className={`store__products-on-page-button ${
-            productsOnPage === 16 ? "store__products-on-page-button_active" : ""
-          }`}
-        >
-          16
-        </button>
+      <div className="store__filter">
+        <Selector
+          title={"Тип изделия:"}
+          options={["Серьги", "Кольца", "Браслеты", "Подвески"]}
+          optionState={productType}
+          selectorState={selectorsStates.productType}
+          setSelectorsStates={() =>
+            setSelectorsStates({
+              ...selectorsStates,
+              [`productType`]: !selectorsStates.productType,
+            })
+          }
+          handleOptionClick={(e: React.MouseEvent<HTMLElement>) =>
+            setProductType(e.currentTarget.innerText as TProductType)
+          }
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        />
+        <Selector
+          title={"Отборожать по:"}
+          options={["8", "12", "16"]}
+          optionState={productsOnPage.toString()}
+          selectorState={selectorsStates.productsOnPageOpen}
+          setSelectorsStates={() =>
+            setSelectorsStates({
+              ...selectorsStates,
+              [`productsOnPageOpen`]: !selectorsStates.productsOnPageOpen,
+            })
+          }
+          handleOptionClick={handleChangeProguctsNumberOnPage}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        />
       </div>
       <div className="store__product-grid">
         {props.productList.map((item, index) => {
