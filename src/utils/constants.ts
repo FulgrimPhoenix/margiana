@@ -53,7 +53,13 @@ interface IConstants {
     };
     contacts: {
       title: string;
-      contactsList: { title: string; icon: string; src: string | null }[];
+      contactsList: {
+        icon: string;
+        itemTitle: {
+          text: string;
+          src?: string;
+        };
+      }[];
     };
   };
   store: {
@@ -153,21 +159,25 @@ export const constants: IConstants = {
       title: "По любым вопросам обращаться:",
       contactsList: [
         {
-          title: contactsDefault.contactPhone,
           icon: phoneIcon,
-          src: `tel: ${contactsDefault.contactPhone}`,
+          itemTitle: {
+            text: contactsDefault.contactPhone,
+            src: `tel: ${contactsDefault.contactPhone}`,
+          },
         },
         {
-          title: "WhatsApp",
           icon: whatsAppIcon,
-          src: contactsDefault.whatsApp,
+          itemTitle: {
+            text: "WhatsApp",
+            src: contactsDefault.whatsApp,
+          },
         },
         {
-          title: "Telegram",
+          itemTitle: { text: "Telegram", src: contactsDefault.telegram },
+
           icon: telegramIcon,
-          src: contactsDefault.telegram,
         },
-        { title: contactsDefault.contactEmail, icon: emailIcon, src: null },
+        { itemTitle: { text: contactsDefault.contactEmail }, icon: emailIcon },
       ],
     },
   },

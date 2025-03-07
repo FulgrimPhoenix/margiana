@@ -1,0 +1,54 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin block-title($options) {
+  $text-color: map-get($options, text-color) !default;
+  $pb: map-get($options, padding) !default;
+  $font-size: map-get($options, font-size) !default;
+  $font-weight: map-get($options, font-weight) !default;
+
+  @if $text-color == null {
+    $text-color: #000;
+  }
+  @if $pb == null {
+    $pb: 10px;
+  }
+  @if $font-size == null {
+    $font-size: 18px;
+  }
+
+  @if $font-weight == null {
+    $font-weight: 600;
+  }
+
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: 27px;
+  text-align: left;
+  color: $text-color;
+  margin: 0;
+  padding-bottom: $pb;
+  text-transform: uppercase;
+}
+
+@mixin title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: left;
+  margin: 20px 0 0;
+}
+
+@mixin hover-state {
+  &:hover {
+    opacity: 0.7;
+  }
+}

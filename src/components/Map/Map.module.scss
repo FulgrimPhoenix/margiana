@@ -1,0 +1,16 @@
+@import "@styles/abstracts/variables.scss";
+@import "@styles/abstracts/mixins.scss";
+
+.geolocation {
+  @include flex-center;
+  padding: 30px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $primary-color;
+
+  &__map {
+    max-width: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
+  }
+}
