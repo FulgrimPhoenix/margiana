@@ -37,7 +37,7 @@
   }
 
   &__title {
-    @include title;
+    @include title(());
   }
 
   &__block-title {

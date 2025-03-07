@@ -9,6 +9,13 @@
   justify-content: space-between;
 }
 
+@mixin grid-display($columns, $row, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-auto-rows: $row;
+  gap: $gap;
+}
+
 @mixin block-title($options) {
   $text-color: map-get($options, text-color) !default;
   $pb: map-get($options, padding) !default;
@@ -39,12 +46,36 @@
   text-transform: uppercase;
 }
 
-@mixin title {
-  font-size: 32px;
-  font-weight: 600;
+@mixin title($options) {
+  $text-color: map-get($options, text-color) !default;
+  $pb: map-get($options, padding) !default;
+  $font-size: map-get($options, font-size) !default;
+  $font-weight: map-get($options, font-weight) !default;
+
+  @if $text-color == null {
+    $text-color: #000;
+  }
+  @if $pb == null {
+    $pb: 10px;
+  }
+  @if $font-size == null {
+    $font-size: 18px;
+  }
+
+  @if $font-weight == null {
+    $font-weight: 600;
+  }
+
+  font-size: $font-size;
+  font-weight: $font-weight;
   line-height: 27px;
+  color: $text-color;
   text-align: left;
+  padding-bottom: $pb;
   margin: 20px 0 0;
+}
+
+@mixin default-text {
 }
 
 @mixin hover-state {

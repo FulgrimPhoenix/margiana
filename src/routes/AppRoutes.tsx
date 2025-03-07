@@ -1,4 +1,4 @@
-import { Contacts, Layout } from "@pages/index";
+import { Contacts, Layout, Store } from "@pages/index";
 import { Route, Routes } from "react-router-dom";
 // import { Layout, TaskPage, ToDo, ToDoQuery } from "../pages";
 
@@ -25,6 +25,7 @@ export const AppRoutes = () => {
         }
       >
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/shop" element={<Store />} />
       </Route>
     </Routes>
   );

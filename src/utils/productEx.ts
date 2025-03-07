@@ -1,7 +1,7 @@
 import producPhototEx from "../images/product/productEx.jpg";
-import { IProduct } from "../types";
+// import { IProduct } from "../types";
 
-export const productEx: IProduct[] = [
+export const productEx: any[] = [
   {
     title: "Серьги2",
     price: 11000,

@@ -19,7 +19,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@types/*": ["types/*"],
+      // "@types/*": ["types/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
       "@ui/*": ["ui/*"],
