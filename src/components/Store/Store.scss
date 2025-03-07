@@ -1,13 +1,75 @@
 .store {
+  &__products-on-page-selector {
+    &-options {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      max-height: 0;
+      overflow: hidden;
+      transition: ease-in-out 0.2s;
+      z-index: 1;
+      background-color: #fff;
+
+      &_open {
+        overflow-y: auto;
+        max-height: 230px;
+        border: 1px solid var(--accent-main);
+      }
+    }
+
+    &-option {
+      background: none;
+      border: none;
+      padding: 5px;
+
+      &_selected {
+        background-color: var(--accent-main);
+        color: #fff;
+      }
+    }
+  }
+  // &__product-products-on-page-container {
+  //   margin: 20px auto;
+  //   display: flex;
+  //   flex-direction: row;
+  // }
+
+  // &__products-on-page-button {
+  //   margin: 0 15px;
+  //   display: flex;
+  //   background: none;
+  //   color: #000;
+  //   border: none;
+  //   transition: 0.2s ease-in-out;
+  //   padding: 0;
+  //   font-size: 16px;
+  //   cursor: pointer;
+
+  //   &:first-child {
+  //     margin-left: 5px;
+  //   }
+
+  //   &_active {
+  //     color: var(--accent-main);
+  //     border-bottom: 1px solid var(--accent-main);
+  //     padding: 0 0 1px;
+  //     transform: scale(1.2);
+  //   }
+
+  //   &:hover {
+  //     opacity: 0.7;
+  //   }
+  // }
   &__product-grid {
     width: 100%;
     max-width: 320px;
     display: grid;
-    padding: 0;
-    margin: 0 auto;
+    padding: 25px 0;
+    margin: 20px auto 0;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 188px;
     gap: 24px 16px;
+    border-bottom: 1px solid #000;
   }
 
   &__product-card {
@@ -17,6 +79,7 @@
     padding: 0px;
     margin: 0 auto;
     list-style: none;
+    animation: fadeIn 0.3s ease-in-out forwards;
 
     &-photo {
       width: 100%;
@@ -42,5 +105,62 @@
       margin: 4px auto auto;
       flex-wrap: nowrap;
     }
+  }
+
+  &__pagination {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &-button {
+      margin: 0 15px;
+      display: flex;
+      background: none;
+      color: #000;
+      border: none;
+      transition: 0.2s ease-in-out;
+      padding: 0;
+      font-size: 16px;
+      cursor: pointer;
+
+      &_active {
+        color: var(--accent-main);
+        border-bottom: 1px solid var(--accent-main);
+        padding: 0 0 1px;
+        transform: scale(1.2);
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &-button:last-child {
+      font-size: 20px;
+      color: var(--accent-main);
+    }
+
+    &-button:first-child {
+      font-size: 20px;
+
+      color: var(--accent-main);
+    }
+
+    &-page-number {
+      font-weight: 400;
+      text-align: center;
+      margin: auto;
+      line-height: 18px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

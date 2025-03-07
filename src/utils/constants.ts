@@ -172,6 +172,6 @@ export const constants: IConstants = {
     },
   },
   store: {
-    title: "Магазин",
+    title: "Каталог товаров",
   },
 };
