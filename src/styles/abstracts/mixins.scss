@@ -9,6 +9,18 @@
   justify-content: space-between;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 @mixin grid-display($columns, $row, $gap) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
@@ -16,26 +28,12 @@
   gap: $gap;
 }
 
-@mixin block-title($options) {
-  $text-color: map-get($options, text-color) !default;
-  $pb: map-get($options, padding) !default;
-  $font-size: map-get($options, font-size) !default;
-  $font-weight: map-get($options, font-weight) !default;
-
-  @if $text-color == null {
-    $text-color: #000;
-  }
-  @if $pb == null {
-    $pb: 10px;
-  }
-  @if $font-size == null {
-    $font-size: 18px;
-  }
-
-  @if $font-weight == null {
-    $font-weight: 600;
-  }
-
+@mixin block-title(
+  $font-size: 16px,
+  $font-weight: 600,
+  $text-color: black,
+  $pb: 8px
+) {
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: 27px;
@@ -46,36 +44,64 @@
   text-transform: uppercase;
 }
 
-@mixin title($options) {
-  $text-color: map-get($options, text-color) !default;
-  $pb: map-get($options, padding) !default;
-  $font-size: map-get($options, font-size) !default;
-  $font-weight: map-get($options, font-weight) !default;
-
-  @if $text-color == null {
-    $text-color: #000;
-  }
-  @if $pb == null {
-    $pb: 10px;
-  }
-  @if $font-size == null {
-    $font-size: 18px;
-  }
-
-  @if $font-weight == null {
-    $font-weight: 600;
-  }
-
+@mixin title(
+  $font-size: 12px,
+  $font-weight: 400,
+  $text-color: $text-color,
+  $line-height: 20px
+) {
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: 27px;
   color: $text-color;
   text-align: left;
-  padding-bottom: $pb;
+  padding-bottom: 0;
   margin: 20px 0 0;
 }
 
-@mixin default-text {
+@mixin primary-text(
+  $font-size: 16px,
+  $font-weight: 400,
+  $text-color: $text-color,
+  $line-height: 20px
+) {
+  font-weight: $font-weight;
+  color: $text-color;
+  font-size: $font-size;
+  padding-bottom: 8px;
+  line-height: $line-height;
+  text-align: left;
+  line-height: 20px;
+}
+
+@mixin secondary-text(
+  $font-size: 16px,
+  $font-weight: 400,
+  $text-color: $secondary-color,
+  $line-height: 20px
+) {
+  font-weight: $font-weight;
+  color: $text-color;
+  font-size: $font-size;
+  padding-bottom: 8px;
+  line-height: $line-height;
+  text-align: left;
+  line-height: 20px;
+}
+
+@mixin accent-text(
+  $font-size: 16px,
+  $font-weight: 400,
+  $text-color: $primary-color,
+  $line-height: 20px
+) {
+  font-weight: $font-weight;
+  color: $text-color;
+  font-size: $font-size;
+  padding-bottom: 8px;
+  line-height: $line-height;
+  text-align: left;
+  line-height: 20px;
 }
 
 @mixin hover-state {

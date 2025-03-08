@@ -2,8 +2,6 @@
 @import "@styles/abstracts/mixins.scss";
 
 .product-card {
-  max-width: 136px;
-  max-height: 188px;
   width: 100%;
   padding: 0px;
   margin: 0 auto;
@@ -12,30 +10,18 @@
 
   .photo {
     width: 100%;
-    max-height: 136px;
+    max-height: 180px;
     object-fit: cover;
     border-radius: 4px;
   }
 
   .title {
-    @include title(
-      (
-        font-size: 14px,
-        font-weight: 400,
-        text-color: $text-color,
-        pb: 0,
-      )
-    );
+    @include primary-text();
     margin: 6px auto auto auto;
   }
 
   .price {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: left;
-    color: var(--accent-main);
-    margin: 4px auto auto;
+    @include accent-text();
     flex-wrap: nowrap;
   }
 

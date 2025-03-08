@@ -10,11 +10,7 @@ interface IProductCard
 
 const ProductCard: FC<IProductCard> = ({ product, ...props }) => {
   return (
-    <li
-      key={`product-${product.id}`}
-      className={clsx(style["product-card"])}
-      {...props}
-    >
+    <li className={clsx(style["product-card"])} {...props}>
       <img
         src={product.photos[0]}
         className={clsx(style["photo"])}

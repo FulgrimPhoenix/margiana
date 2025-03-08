@@ -2,7 +2,7 @@
 @import "@styles/abstracts/mixins.scss";
 
 .product-list {
-  @include grid-display(2, 188px, 24px 16px);
+  @include grid-display(2, 250px, 24px 16px);
   width: 100%;
   max-width: map-get($breakpoints, mobile);
   padding: 25px 0;

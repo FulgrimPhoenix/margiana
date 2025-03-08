@@ -15,7 +15,7 @@ const ProductList: FC<IProductList> = ({ ...props }) => {
   return (
     <ul className={clsx(style["product-list"])} {...props}>
       {productEx.map((item: IProduct) => (
-        <ProductCard product={item} />
+        <ProductCard key={item.id} product={item} />
       ))}
     </ul>
   );
