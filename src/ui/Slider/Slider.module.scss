@@ -1,0 +1,24 @@
+@import "@/styles/abstracts/variables.scss";
+@import "@/styles/abstracts/mixins.scss";
+
+.slider {
+  padding: 0;
+  margin: 20px 0 0;
+  width: 100%;
+  padding-bottom: 20px;
+
+  .slide {
+    padding: 0;
+    width: 100%;
+
+    &-photo {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    &-description {
+      margin: 40px 0;
+    }
+  }
+}

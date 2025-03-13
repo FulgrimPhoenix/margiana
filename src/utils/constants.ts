@@ -2,13 +2,12 @@ import logo from "../images/header/logo.svg";
 import profileIcon from "../images/header/profileIcon.svg";
 import producPhototEx from "../images/product/productEx.jpg";
 import statusProductButtonImg from "../images/product/statusImg.svg";
-import { IAdminProfileData, IContacts, IProduct } from "../types";
 import pathGuideTest from "../images/contacts/pathGuideTest.jpg";
 import workshopBuilding from "../images/contacts/workshopBuilding.png";
-import telegramIcon from "../images/contacts/icons/telegramIcon.svg";
-import whatsAppIcon from "../images/contacts/icons/whatsAppIcon.svg";
-import emailIcon from "../images/contacts/icons/emailIcon.svg";
-import phoneIcon from "../images/contacts/icons/phoneIcon.svg";
+// import telegramIcon from "../images/contacts/icons/telegramIcon.svg";
+// import whatsAppIcon from "../images/contacts/icons/whatsAppIcon.svg";
+// import emailIcon from "../images/contacts/icons/emailIcon.svg";
+// import phoneIcon from "../images/contacts/icons/phoneIcon.svg";
 import { productEx } from "./productEx";
 
 interface IConstants {
@@ -17,7 +16,7 @@ interface IConstants {
     links: { title: string; link: string }[];
     profileLink: { title: string; link: string; icon: string };
   };
-  defaultAdminProfileData: IAdminProfileData;
+  // defaultAdminProfileData: IAdminProfileData;
   productPage: {
     descriptionButton: {
       title: string;
@@ -34,8 +33,8 @@ interface IConstants {
       title: string;
     };
   };
-  productListEx: IProduct[];
-  similarProductListEx: IProduct[];
+  // productListEx: IProduct[];
+  // similarProductListEx: IProduct[];
   contactsPage: {
     address: {
       img: string;
@@ -53,7 +52,13 @@ interface IConstants {
     };
     contacts: {
       title: string;
-      contactsList: { title: string; icon: string; src: string | null }[];
+      // contactsList: {
+      //   icon: string;
+      //   itemTitle: {
+      //     text: string;
+      //     src?: string;
+      //   };
+      // }[];
     };
   };
   store: {
@@ -80,11 +85,11 @@ export const constants: IConstants = {
     ],
     profileLink: { title: "Профиль", link: "/profile", icon: profileIcon },
   },
-  defaultAdminProfileData: {
-    login: "tester2024",
-    email: "tester@mail.ru",
-    contacts: contactsDefault,
-  },
+  // defaultAdminProfileData: {
+  //   login: "tester2024",
+  //   email: "tester@mail.ru",
+  //   contacts: contactsDefault,
+  // },
   productPage: {
     descriptionButton: {
       title: "Описание",
@@ -101,34 +106,34 @@ export const constants: IConstants = {
       title: "Подписывайся на нас",
     },
   },
-  productListEx: [
-    {
-      title: "Серьги1",
-      price: 11000,
-      description: `Изысканные золотые серьги «Бриллиантовая капелька» — воплощение 
-    элегантности и стиля. Изготовленные из 585 пробы белого золота, они обладают 
-    неповторимым сиянием и прочностью. Каждая сережка украшена одной идеальной 
-    бриллиантовой капелькой весом 0,15 карата, которая переливается всеми цветами 
-    радуги при попадании света. Форма капли символизирует чистоту и совершенство 
-    природы, а её утонченность подчеркивает индивидуальность обладательницы.
-    Эти серьги станут идеальным дополнением к любому наряду, будь то вечернее платье или 
-    деловой костюм. Их лаконичный дизайн позволяет носить их как днем, так и вечером, добавляя 
-    образу женственности и шика. Золото высшей пробы обеспечивает комфорт при длительном ношении, 
-    а качественная закрепка камня гарантирует безопасность и долговечность украшения.
-    «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности 
-    и безупречного вкуса.`,
-      id: "111111",
-      categories: ["серьги"],
-      photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
-      additionalInfo: [
-        ["Вес", "100гр"],
-        ["Размер", "15 x 10 x 1 см"],
-        ["Материал", "Золото"],
-      ],
-      isDiscount: false,
-    },
-  ],
-  similarProductListEx: productEx,
+  // productListEx: [
+  //   {
+  //     title: "Серьги1",
+  //     price: 11000,
+  //     description: `Изысканные золотые серьги «Бриллиантовая капелька» — воплощение
+  //   элегантности и стиля. Изготовленные из 585 пробы белого золота, они обладают
+  //   неповторимым сиянием и прочностью. Каждая сережка украшена одной идеальной
+  //   бриллиантовой капелькой весом 0,15 карата, которая переливается всеми цветами
+  //   радуги при попадании света. Форма капли символизирует чистоту и совершенство
+  //   природы, а её утонченность подчеркивает индивидуальность обладательницы.
+  //   Эти серьги станут идеальным дополнением к любому наряду, будь то вечернее платье или
+  //   деловой костюм. Их лаконичный дизайн позволяет носить их как днем, так и вечером, добавляя
+  //   образу женственности и шика. Золото высшей пробы обеспечивает комфорт при длительном ношении,
+  //   а качественная закрепка камня гарантирует безопасность и долговечность украшения.
+  //   «Бриллиантовые капельки» — это не просто аксессуар, это символ вашей уникальности
+  //   и безупречного вкуса.`,
+  //     id: "111111",
+  //     categories: ["серьги"],
+  //     photos: [producPhototEx, producPhototEx, producPhototEx, producPhototEx],
+  //     additionalInfo: [
+  //       ["Вес", "100гр"],
+  //       ["Размер", "15 x 10 x 1 см"],
+  //       ["Материал", "Золото"],
+  //     ],
+  //     isDiscount: false,
+  //   },
+  // ],
+  // similarProductListEx: productEx,
   contactsPage: {
     address: {
       img: workshopBuilding,
@@ -151,24 +156,28 @@ export const constants: IConstants = {
     },
     contacts: {
       title: "По любым вопросам обращаться:",
-      contactsList: [
-        {
-          title: contactsDefault.contactPhone,
-          icon: phoneIcon,
-          src: `tel: ${contactsDefault.contactPhone}`,
-        },
-        {
-          title: "WhatsApp",
-          icon: whatsAppIcon,
-          src: contactsDefault.whatsApp,
-        },
-        {
-          title: "Telegram",
-          icon: telegramIcon,
-          src: contactsDefault.telegram,
-        },
-        { title: contactsDefault.contactEmail, icon: emailIcon, src: null },
-      ],
+      // contactsList: [
+      //   {
+      //     icon: phoneIcon,
+      //     itemTitle: {
+      //       text: contactsDefault.contactPhone,
+      //       src: `tel: ${contactsDefault.contactPhone}`,
+      //     },
+      //   },
+      //   {
+      //     icon: whatsAppIcon,
+      //     itemTitle: {
+      //       text: "WhatsApp",
+      //       src: contactsDefault.whatsApp,
+      //     },
+      //   },
+      //   {
+      //     itemTitle: { text: "Telegram", src: contactsDefault.telegram },
+
+      //     icon: telegramIcon,
+      //   },
+      //   { itemTitle: { text: contactsDefault.contactEmail }, icon: emailIcon },
+      // ],
     },
   },
   store: {

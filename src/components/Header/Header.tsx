@@ -7,7 +7,7 @@ interface IHeader {
   mode: 0 | 1;
 }
 
-export const Header = ({ mode }: IHeader): React.ReactElement => {
+const Header = ({ mode }: IHeader): React.ReactElement => {
   const headerConstants = constants.header;
   return (
     <>
@@ -45,3 +45,5 @@ export const Header = ({ mode }: IHeader): React.ReactElement => {
     </>
   );
 };
+
+export default Header;

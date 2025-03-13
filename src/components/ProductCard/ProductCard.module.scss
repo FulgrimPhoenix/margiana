@@ -1,0 +1,36 @@
+@import "@/styles/abstracts/variables.scss";
+@import "@/styles/abstracts/mixins.scss";
+
+.product-card {
+  width: 100%;
+  padding: 0px;
+  margin: 0 auto;
+  list-style: none;
+  animation: fadeIn 0.3s ease-in-out forwards;
+
+  .photo {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .title {
+    @include primary-text();
+    margin: 6px auto auto auto;
+  }
+
+  .price {
+    @include accent-text();
+    flex-wrap: nowrap;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

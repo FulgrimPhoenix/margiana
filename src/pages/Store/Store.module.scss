@@ -1,0 +1,10 @@
+@import "@/styles/abstracts/variables.scss";
+@import "@/styles/abstracts/mixins.scss";
+
+.store {
+  @include flex-column;
+
+  .title {
+    @include title();
+  }
+}

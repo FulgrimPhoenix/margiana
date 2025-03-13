@@ -1,0 +1,51 @@
+@import "@/styles/abstracts/variables.scss";
+@import "@/styles/abstracts/mixins.scss";
+
+.contacts-page {
+  @include flex-column;
+
+  .title {
+    @include title();
+  }
+
+  .block-title {
+    @include block-title();
+  }
+
+  .container {
+    @include flex-column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0;
+    border-bottom: 1px solid $primary-color;
+  }
+
+  .address-description {
+    margin: 0 0 15px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+  }
+
+  .image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 40px auto;
+  }
+
+  .address-schedule-container {
+    @include flex-row;
+    margin: 0;
+  }
+
+  .address-schedule-title {
+    margin: 0;
+    padding: 0;
+  }
+
+  .address-shelude {
+    margin: 0;
+    padding: 0;
+  }
+}
