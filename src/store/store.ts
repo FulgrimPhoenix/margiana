@@ -12,5 +12,7 @@ export const store = configureStore({
 export type TAppState = ReturnType<typeof store.getState>;
 export type TAppDispatch = typeof store.dispatch;
 
-export const useAppSelector = useSelector.withTypes<TAppState>();
-export const useAppDispatch = useDispatch.withTypes<TAppDispatch>();
+export const useAppSelector: <TSelected>(
+  selector: (state: TAppState) => TSelected
+) => TSelected = useSelector;
+export const useAppDispatch = () => useDispatch<TAppDispatch>();

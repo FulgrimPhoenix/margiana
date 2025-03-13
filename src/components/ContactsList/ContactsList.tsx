@@ -1,6 +1,6 @@
-import { IIconListItem } from "@ui/IconListItem/IconListItem";
-import { IconListItem } from "@ui/index";
-import { constants } from "@utils/constants";
+import { IIconListItem } from "@/ui/IconListItem/IconListItem";
+import { IconListItem } from "@/ui/index";
+import { constants } from "@/utils/constants";
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 import style from "./ContactsList.module.scss";
 import clsx from "clsx";

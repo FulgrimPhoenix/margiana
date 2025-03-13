@@ -1,7 +1,7 @@
 import "./Contacts.module.scss";
 import { constants } from "../../utils/constants";
-import { ContactsList, Map } from "@components/index";
-import { Slider } from "@ui/index";
+import { ContactsList, Map } from "@/components/index";
+import { Slider } from "@/ui/index";
 import style from "./Contacts.module.scss";
 import clsx from "clsx";
 

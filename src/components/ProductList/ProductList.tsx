@@ -1,5 +1,5 @@
-import ProductCard from "@components/ProductCard/ProductCard";
-import { productEx } from "@utils/productEx";
+import ProductCard from "@/components/ProductCard/ProductCard";
+import { productEx } from "@/utils/productEx";
 import clsx from "clsx";
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 import { IProduct } from "types/product.type";

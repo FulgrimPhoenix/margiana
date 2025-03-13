@@ -1,5 +1,5 @@
-@import "@styles/abstracts/variables.scss";
-@import "@styles/abstracts/mixins.scss";
+@import "@/styles/abstracts/variables.scss";
+@import "@/styles/abstracts/mixins.scss";
 
 .product-list {
   @include grid-display(2, 250px, 24px 16px);

@@ -1,4 +1,4 @@
-import { TextField } from "@ui/index";
+import { TextField } from "@/ui/index";
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 
 interface IForm

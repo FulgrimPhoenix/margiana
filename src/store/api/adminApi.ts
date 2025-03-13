@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IAdmin } from "types/users.types";
+import { IAdmin } from "../../types/users.types";
 
 export const adminApi = createApi({
   reducerPath: "admin",

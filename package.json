@@ -9,26 +9,23 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.119",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
+    "json-server": "^1.0.0-beta.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^8.1.0",
     "react-router-dom": "^6.27.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.80.6",
     "swiper": "^11.1.14",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "start": "vite",
+    "dev": "concurrently \"vite\" \"json-server --watch ./server/db.json --port 3001\"",
+    "server": "json-server --watch ./server/db.json --port 3001",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +46,14 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.1.0"
+    "@types/node": "^22.13.10",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/yandex-maps": "^2.1.36",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "sass": "^1.85.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0"
   }
 }

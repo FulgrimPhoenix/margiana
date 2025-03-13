@@ -1,4 +1,4 @@
-import { useGetAdminInfoQuery } from "@store/api/adminApi";
+import { useGetAdminInfoQuery } from "@/store/api/adminApi";
 import { FC } from "react";
 
 const AdminProfile: FC = () => {

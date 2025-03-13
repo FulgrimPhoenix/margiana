@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from "react";
 import { constants } from "../../utils/constants";
 import style from "./Store.module.scss";
 // import { Selector } from "../../components/Selector/Selector";
-import { ProductList } from "@components/index";
+import { ProductList } from "@/components/index";
 import clsx from "clsx";
 
 interface IStore
