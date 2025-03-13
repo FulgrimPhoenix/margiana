@@ -1,10 +1,10 @@
-import React, { DetailedHTMLProps, FC, HTMLAttributes } from "react";
+import React, { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from "react";
 import style from "./IconListItem.module.scss";
 import clsx from "clsx";
 
 export interface IIconListItem
   extends DetailedHTMLProps<HTMLAttributes<HTMLLIElement>, HTMLLIElement> {
-  icon: string;
+  icon: ReactNode;
   itemTitle: {
     text: string;
     src?: string;
@@ -13,7 +13,8 @@ export interface IIconListItem
 
 const IconListItem: FC<IIconListItem> = ({ icon, itemTitle, ...props }) => (
   <li className={clsx(style["list-item"])} {...props}>
-    <img className={clsx(style["item-icon"])} src={icon} alt="иконка" />
+    {/* <img className={clsx(style["item-icon"])} src={icon} alt="иконка" /> */}
+    {icon}
     {!itemTitle.src ? (
       <p className={clsx(style["item-title"])}>{itemTitle.text}</p>
     ) : (

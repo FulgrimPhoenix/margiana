@@ -4,10 +4,10 @@ import producPhototEx from "../images/product/productEx.jpg";
 import statusProductButtonImg from "../images/product/statusImg.svg";
 import pathGuideTest from "../images/contacts/pathGuideTest.jpg";
 import workshopBuilding from "../images/contacts/workshopBuilding.png";
-import telegramIcon from "../images/contacts/icons/telegramIcon.svg";
-import whatsAppIcon from "../images/contacts/icons/whatsAppIcon.svg";
-import emailIcon from "../images/contacts/icons/emailIcon.svg";
-import phoneIcon from "../images/contacts/icons/phoneIcon.svg";
+// import telegramIcon from "../images/contacts/icons/telegramIcon.svg";
+// import whatsAppIcon from "../images/contacts/icons/whatsAppIcon.svg";
+// import emailIcon from "../images/contacts/icons/emailIcon.svg";
+// import phoneIcon from "../images/contacts/icons/phoneIcon.svg";
 import { productEx } from "./productEx";
 
 interface IConstants {
@@ -52,13 +52,13 @@ interface IConstants {
     };
     contacts: {
       title: string;
-      contactsList: {
-        icon: string;
-        itemTitle: {
-          text: string;
-          src?: string;
-        };
-      }[];
+      // contactsList: {
+      //   icon: string;
+      //   itemTitle: {
+      //     text: string;
+      //     src?: string;
+      //   };
+      // }[];
     };
   };
   store: {
@@ -156,28 +156,28 @@ export const constants: IConstants = {
     },
     contacts: {
       title: "По любым вопросам обращаться:",
-      contactsList: [
-        {
-          icon: phoneIcon,
-          itemTitle: {
-            text: contactsDefault.contactPhone,
-            src: `tel: ${contactsDefault.contactPhone}`,
-          },
-        },
-        {
-          icon: whatsAppIcon,
-          itemTitle: {
-            text: "WhatsApp",
-            src: contactsDefault.whatsApp,
-          },
-        },
-        {
-          itemTitle: { text: "Telegram", src: contactsDefault.telegram },
+      // contactsList: [
+      //   {
+      //     icon: phoneIcon,
+      //     itemTitle: {
+      //       text: contactsDefault.contactPhone,
+      //       src: `tel: ${contactsDefault.contactPhone}`,
+      //     },
+      //   },
+      //   {
+      //     icon: whatsAppIcon,
+      //     itemTitle: {
+      //       text: "WhatsApp",
+      //       src: contactsDefault.whatsApp,
+      //     },
+      //   },
+      //   {
+      //     itemTitle: { text: "Telegram", src: contactsDefault.telegram },
 
-          icon: telegramIcon,
-        },
-        { itemTitle: { text: contactsDefault.contactEmail }, icon: emailIcon },
-      ],
+      //     icon: telegramIcon,
+      //   },
+      //   { itemTitle: { text: contactsDefault.contactEmail }, icon: emailIcon },
+      // ],
     },
   },
   store: {
