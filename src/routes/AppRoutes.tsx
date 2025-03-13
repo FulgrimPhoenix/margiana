@@ -1,5 +1,4 @@
-import { AdminProfile } from "@components/index";
-import { Contacts, Layout, Store } from "@pages/index";
+import { AdminProfile, Contacts, Layout, Store } from "@pages/index";
 import { Route, Routes } from "react-router-dom";
 // import { Layout, TaskPage, ToDo, ToDoQuery } from "../pages";
 
