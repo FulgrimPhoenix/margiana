@@ -10,17 +10,21 @@ interface IProductList
   extends DetailedHTMLProps<
     HTMLAttributes<HTMLUListElement>,
     HTMLUListElement
-  > {}
+  > {
+  limit?: number;
+}
 
-const ProductList: FC<IProductList> = ({ ...props }) => {
+const ProductList: FC<IProductList> = ({ limit, ...props }) => {
   const { data = [], isLoading } = useGetProductsListQuery();
 
   if (isLoading) return <span>Loading...</span>;
   return (
     <ul className={clsx(style["product-list"])} {...props}>
-      {data.map((item: IProduct) => (
-        <ProductCard key={item.id} product={item} />
-      ))}
+      {data.map((item: IProduct, i) =>
+        !limit || i < limit ? (
+          <ProductCard key={item.id} product={item} />
+        ) : null
+      )}
     </ul>
   );
 };

@@ -1,0 +1,16 @@
+@import "@/styles/abstracts/variables.scss";
+@import "@/styles/abstracts/mixins.scss";
+
+.main-page {
+  .block-title-container {
+    @include flex-between;
+  }
+  .block-title {
+    @include block-title(16px, 600, #000, 0px);
+  }
+  .block-title-link {
+    @include block-title(16px, 600, $primary-color, 0px);
+    text-decoration: none;
+    text-transform: none;
+  }
+}
