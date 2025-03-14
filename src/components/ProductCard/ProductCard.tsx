@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 import style from "./ProductCard.module.scss";
 import { IProduct } from "@/types/product.type";
+import { useNavigate } from "react-router-dom";
 
 interface IProductCard
   extends DetailedHTMLProps<HTMLAttributes<HTMLLIElement>, HTMLLIElement> {
@@ -9,8 +10,16 @@ interface IProductCard
 }
 
 const ProductCard: FC<IProductCard> = ({ product, ...props }) => {
+  const navigate = useNavigate();
+  const navigateToProduct = () => {
+    navigate(`/products/${product.id}`, { state: { id: product.id } });
+  };
   return (
-    <li className={clsx(style["product-card"])} {...props}>
+    <li
+      className={clsx(style["product-card"])}
+      onClick={navigateToProduct}
+      {...props}
+    >
       <img
         src={product.photos[0]}
         className={clsx(style["photo"])}
