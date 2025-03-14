@@ -5,7 +5,9 @@ const Layout = (): JSX.Element => {
   return (
     <>
       <Header mode={1} />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 };

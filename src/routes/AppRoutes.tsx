@@ -1,4 +1,4 @@
-import { AdminProfile, Contacts, Layout, Store } from "@/pages/index";
+import { AdminProfile, Contacts, Layout, Main, Store } from "@/pages/index";
 import { Route, Routes } from "react-router-dom";
 // import { Layout, TaskPage, ToDo, ToDoQuery } from "../pages";
 
@@ -24,6 +24,7 @@ export const AppRoutes = () => {
           </>
         }
       >
+        <Route index element={<Main />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/shop" element={<Store />} />
         <Route path="/profile" element={<AdminProfile />} />

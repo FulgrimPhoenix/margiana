@@ -9,14 +9,14 @@ interface ICONTACTS_LIST {
 }
 
 export const CONTACTS_LIST: ICONTACTS_LIST[] = [
-  { name: "whatsApp", icon: WhatsAppIcon({}), title: "WhatsApp" },
-  { name: "telegram", icon: TelegramIcon({}), title: "Telegram" },
+  { name: "whatsApp", icon: WhatsAppIcon({ size: "sm" }), title: "WhatsApp" },
+  { name: "telegram", icon: TelegramIcon({ size: "sm" }), title: "Telegram" },
   {
-    icon: PhoneIcon({}),
+    icon: PhoneIcon({ size: "sm" }),
     name: "contactPhone",
   },
   {
     name: "contactEmail",
-    icon: EmailIcon({}),
+    icon: EmailIcon({ size: "sm" }),
   },
 ];

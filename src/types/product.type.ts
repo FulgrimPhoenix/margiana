@@ -9,3 +9,10 @@ export interface IProduct {
   isDiscount: boolean;
   discountValue?: number;
 }
+
+export interface IOffer {
+  title: string;
+  price: number;
+  id: string;
+  photo: string;
+}

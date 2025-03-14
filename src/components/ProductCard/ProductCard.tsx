@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
-import { IProduct } from "types/product.type";
 import style from "./ProductCard.module.scss";
+import { IProduct } from "@/types/product.type";
 
 interface IProductCard
   extends DetailedHTMLProps<HTMLAttributes<HTMLLIElement>, HTMLLIElement> {

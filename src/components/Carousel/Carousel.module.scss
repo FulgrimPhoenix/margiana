@@ -1,0 +1,62 @@
+@import "@/styles/abstracts/variables.scss";
+@import "@/styles/abstracts/mixins.scss";
+
+.carousel {
+  padding: 0;
+  margin: 20px 0 0;
+  width: 100%;
+  padding-bottom: 20px;
+  .slide {
+    padding: 0;
+    width: 100%;
+
+    &-container {
+      position: relative;
+      top: -220px;
+      padding: 0 12px;
+    }
+
+    &-photo {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    &-title {
+      @include title(32px, 500, #fff, 38px);
+      margin-bottom: 16px;
+    }
+
+    &-subtitle {
+      @include title(20px, 400, #fff, 20px);
+      text-transform: lowercase;
+      margin: 0 0 20px;
+    }
+  }
+  :global(.swiper) {
+    aspect-ratio: 9 / 11.2; /* Высота автоматически рассчитывается */
+  }
+
+  :global(.swiper-pagination) {
+    display: flex;
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Выравниваем по центру */
+    height: 20px; /* Фиксируем высоту */
+  }
+
+  :global(.swiper-pagination-bullet) {
+    background-color: #fff; /* Цвет буллетов */
+    width: 4px;
+    height: 4px;
+    opacity: 1;
+
+    transition: transform 0.3s;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background-color: transparent; /* Делаем центр прозрачным */
+    border: 2px solid #fff; /* Контур активного кружка */
+    opacity: 1;
+    transform: scale(1.2); /* Увеличение активного буллета */
+  }
+}

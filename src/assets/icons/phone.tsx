@@ -5,11 +5,11 @@ const PhoneIcon: FC<IIcon> = (props) => {
   const getSize = (size: IIcon["size"]) => {
     switch (size) {
       case "sm":
-        return { width: "16px", height: "16px" };
+        return { width: "20px", height: "20px" };
       case "md":
-        return { width: "24px", height: "24px" };
+        return { width: "28px", height: "28px" };
       case "lg":
-        return { width: "32px", height: "32px" };
+        return { width: "36px", height: "36px" };
       default:
         return { width: "24px", height: "24px" };
     }
