@@ -67,8 +67,6 @@ export const ProductPage: FC = () => {
           modules={[Scrollbar]}
           spaceBetween={50}
           slidesPerView={1}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper: any) => console.log(swiper)}
         >
           {currentProduct.photos.map((photo: string) => (
             <SwiperSlide>
@@ -83,7 +81,7 @@ export const ProductPage: FC = () => {
           ))}
         </Swiper>
       </ul>
-      <h2 className="product-page__product-title">{currentProduct.title}</h2>
+      {/* <h2 className="product-page__product-title">{currentProduct.title}</h2>
       <span className="product-page__product-price">
         {currentProduct.price},00 руб.
       </span>
@@ -192,7 +190,7 @@ export const ProductPage: FC = () => {
             })}
           </Swiper>
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 };
