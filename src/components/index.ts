@@ -5,3 +5,4 @@ export { default as ProductList } from "./ProductList/ProductList";
 export { default as ProductCard } from "./ProductCard/ProductCard";
 // export { default as AdminProfile } from "./AdminProfile/AdminProfile";
 export { default as Carousel } from "./Carousel/Carousel";
+export { default as PathGuide } from "../components/PathGuide/PathGuide";

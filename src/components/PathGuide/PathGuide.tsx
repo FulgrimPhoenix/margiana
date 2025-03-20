@@ -4,10 +4,10 @@ import "swiper/css/scrollbar";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import clsx from "clsx";
-import style from "./Slider.module.scss";
+import style from "./PathGuide.module.scss";
 import React, { FC } from "react";
 
-interface ISlider extends SwiperProps {
+interface IPathGuide extends SwiperProps {
   pagination: boolean;
   slidesList: {
     photo?: string;
@@ -15,7 +15,7 @@ interface ISlider extends SwiperProps {
   }[];
 }
 
-const Slider: FC<ISlider> = ({ pagination, slidesList, ...props }) => {
+const PathGuide: FC<IPathGuide> = ({ pagination, slidesList, ...props }) => {
   return (
     <ul className={clsx(style["slider"])}>
       <Swiper
@@ -51,11 +51,11 @@ const Slider: FC<ISlider> = ({ pagination, slidesList, ...props }) => {
   );
 };
 
-const memoizedSlider = React.memo(Slider, (prevProps, nextProps) => {
+const memoizedPathGuide = React.memo(PathGuide, (prevProps, nextProps) => {
   return (
     prevProps.pagination === nextProps.pagination &&
     prevProps.slidesList === nextProps.slidesList
   );
 });
 
-export default memoizedSlider;
+export default memoizedPathGuide;

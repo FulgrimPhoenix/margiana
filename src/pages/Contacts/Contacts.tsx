@@ -1,7 +1,6 @@
 import "./Contacts.module.scss";
 import { constants } from "../../utils/constants";
-import { ContactsList, Map } from "@/components/index";
-import { Slider } from "@/ui/index";
+import { ContactsList, Map, PathGuide } from "@/components/index";
 import style from "./Contacts.module.scss";
 import clsx from "clsx";
 
@@ -42,7 +41,7 @@ const Contacts = (): JSX.Element => {
         <h2 className={clsx(style["block-title"])}>
           {constants.contactsPage.pathGuide.title}
         </h2>
-        <Slider
+        <PathGuide
           slidesList={constants.contactsPage.pathGuide.guide}
           pagination={true}
         />
